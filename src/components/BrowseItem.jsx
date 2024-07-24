@@ -16,7 +16,7 @@ export default function BrowseItem(props) {
           </div>
           <div className="col-lg-7 align-self-center">
             <div className="right-image">
-              <img src={props.imageURL} alt="imageURL" />
+              <img src={props.imageURL} alt="icon" />
             </div>
           </div>
         </div>

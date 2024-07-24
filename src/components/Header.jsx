@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export default function Header() {
   return (
     <header
@@ -15,24 +16,33 @@ export default function Header() {
               {/* <!-- ***** Menu Start ***** --> */}
               <ul className="nav">
                 <li>
-                  <a href="index.html" className="active">
+                  <Link to={"/"}>
                     <b>Home</b>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="category.html">
+                  <Link to={"/category"}>
                     <b>Categories</b>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="listing.html">
-                    <b>Listings</b>
-                  </a>
+                  <Link to={"/all"}>
+                    <b>All Listings</b>
+                  </Link>
                 </li>
                 <li>
-                  <a href="contact.html">
-                    <b>Contact Us</b>
-                  </a>
+                  <Link to={"/login"}>
+                    <div className="main-white-button">
+                      <i className="fa fa-user"></i> Login
+                    </div>
+                  </Link>
+                </li>
+                <li>
+                  <Link to={"/login"}>
+                    <div className="main-white-button">
+                      <i className="fa fa-user-plus"></i> Register
+                    </div>
+                  </Link>
                 </li>
                 <li>
                   <div className="main-white-button">

@@ -6,11 +6,11 @@ export default function Browse() {
     <div className="popular-categories">
       <div className="container">
         <div className="row">
-          <div className="col-lg-12">
-            <div className="section-heading">
+          {/* <div className="col-lg-12"> */}
+          {/* <div className="section-heading">
               <h2>Browse Categories</h2>
-            </div>
-          </div>
+            </div> */}
+          {/* </div> */}
           <div className="col-lg-12">
             <div className="naccs">
               <div className="grid">
@@ -19,31 +19,31 @@ export default function Browse() {
                     <div className="menu">
                       <div className="first-thumb active">
                         <BrowseMenu
-                          imageURL="assets/images/search-icon-restaurants.png"
+                          iconURL="assets/images/search-icon-restaurants.png"
                           category="Restaurants"
                         />
                       </div>
                       <div>
                         <BrowseMenu
-                          imageURL="assets/images/search-icon-nightlife.png"
+                          iconURL="assets/images/search-icon-nightlife.png"
                           category="Nightlife"
                         />
                       </div>
                       <div>
                         <BrowseMenu
-                          imageURL="assets/images/search-icon-shops.png"
+                          iconURL="assets/images/search-icon-shops.png"
                           category="Shops"
                         />
                       </div>
                       <div>
                         <BrowseMenu
-                          imageURL="assets/images/search-icon-museums.png"
+                          iconURL="assets/images/search-icon-museums.png"
                           category="Museums"
                         />
                       </div>
                       <div className="last-thumb">
                         <BrowseMenu
-                          imageURL="assets/images/search-icon-activities.png"
+                          iconURL="assets/images/search-icon-activities.png"
                           category="Activities"
                         />
                       </div>
@@ -53,65 +53,40 @@ export default function Browse() {
                     <ul className="nacc">
                       <li className="active">
                         <BrowseItem
-                          title="Stuffs"
-                          text="Plot Listing is a responsive Bootstrap 5
-                                    website template that included 4 different
-                                    HTML pages. This template is provided by
-                                    TemplateMo website. You can apply this
-                                    layout for your static or dynamic CMS
-                                    websites."
-                          category="Rentals"
+                          title="Restaurants"
+                          text="Restaurants in the city encompass a rich and diverse culinary landscape, providing a multitude of dining options to cater to various tastes, preferences, and occasions. This vibrant urban dining scene is characterized by its wide range of restaurant types, each offering a unique experience to its patrons."
+                          category="Restaurants"
+                          imageURL="assets/images/browse-restaurant.jpg"
+                        />
+                      </li>
+                      <li>
+                        <BrowseItem
+                          title="Nightlife"
+                          text="This dynamic category includes bustling bars, energetic nightclubs, intimate live music venues, and stylish lounges. Whether you're looking for a lively place to socialize, catch a live show, or enjoy a cocktail in a chic setting, the city's nightlife has something to offer for everyone seeking evening excitement and social engagement."
+                          category="Nightlife"
+                          imageURL="assets/images/browse-nightlife.jpg"
+                        />
+                      </li>
+                      <li>
+                        <BrowseItem
+                          title="Shops"
+                          text="This category includes everything from high-end boutiques and department stores to unique local shops and specialty stores. City shops offer a wide array of products, such as fashion, electronics, home goods, and artisanal items."
+                          category="Shops"
                           imageURL="assets/images/tabs-image-01.jpg"
                         />
                       </li>
                       <li>
                         <BrowseItem
-                          title="Food and Lifestyle category is here"
-                          text="Plot Listing is a responsive Bootstrap 5
-                                    website template that included 4 different
-                                    HTML pages. This template is provided by
-                                    TemplateMo website. You can apply this
-                                    layout for your static or dynamic CMS
-                                    websites."
-                          category="Food & Lifestyle"
-                          imageURL="assets/images/tabs-image-02.jpg"
-                        />
-                      </li>
-                      <li>
-                        <BrowseItem
-                          title="Shopping"
-                          text="Plot Listing is a responsive Bootstrap 5
-                                    website template that included 4 different
-                                    HTML pages. This template is provided by
-                                    TemplateMo website. You can apply this
-                                    layout for your static or dynamic CMS
-                                    websites."
-                          category="Shopping"
-                          imageURL="assets/images/tabs-image-01.jpg"
-                        />
-                      </li>
-                      <li>
-                        <BrowseItem
-                          title="Sightseeing is here"
-                          text="Plot Listing is a responsive Bootstrap 5
-                                    website template that included 4 different
-                                    HTML pages. This template is provided by
-                                    TemplateMo website. You can apply this
-                                    layout for your static or dynamic CMS
-                                    websites."
-                          category="Sightseeing"
+                          title="Museums"
+                          text="Museums in the city offer a rich cultural and educational experience through diverse collections and exhibitions. This category includes art museums showcasing classic and modern works, history museums presenting artifacts and stories from the past, science museums, and specialized institutions focusing on specific topics such as natural history or technology."
+                          category="Museums"
                           imageURL="assets/images/tabs-image-05.jpg"
                         />
                       </li>
                       <li>
                         <BrowseItem
-                          title="Entertainment is here"
-                          text="Plot Listing is a responsive Bootstrap 5
-                                    website template that included 4 different
-                                    HTML pages. This template is provided by
-                                    TemplateMo website. You can apply this
-                                    layout for your static or dynamic CMS
-                                    websites."
+                          title="Activities"
+                          text="Whether you're interested in sports, arts, or simply exploring the city's vibrant neighborhoods, the range of activities provides diverse opportunities for entertainment, relaxation, and discovery."
                           category="Activities"
                           imageURL="assets/images/tabs-image-02.jpg"
                         />
