@@ -63,7 +63,7 @@ export default function Register() {
                                   </div>
                                 </div> */}
                               <button className="main-button" type="submit">
-                                <i className="fa fa-solid fa-key"></i>
+                                <i className="fa fa-solid fa-pencil"></i>
                                 Register
                               </button>
                             </form>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 export default function Header() {
   return (
     <header
@@ -16,33 +16,58 @@ export default function Header() {
               {/* <!-- ***** Menu Start ***** --> */}
               <ul className="nav">
                 <li>
-                  <Link to={"/"}>
+                  <NavLink
+                    to={"/"}
+                    style={({ isActive }) =>
+                      isActive ? { color: "#50b498" } : {}
+                    }
+                  >
                     <b>Home</b>
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to={"/category"}>
+                  <NavLink
+                    to={"/category"}
+                    style={({ isActive }) =>
+                      isActive ? { color: "#50b498" } : {}
+                    }
+                  >
                     <b>Categories</b>
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to={"/all"}>
+                  <NavLink
+                    to={"/all"}
+                    style={({ isActive }) =>
+                      isActive ? { color: "#50b498" } : {}
+                    }
+                  >
                     <b>All Listings</b>
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to={"/login"}>
+                  <NavLink
+                    to={"/login"}
+                    style={({ isActive }) =>
+                      isActive ? { color: "#50b498" } : {}
+                    }
+                  >
                     <div className="main-white-button">
-                      <i className="fa fa-user"></i> Login
+                      <i className="fa fa-user"></i> <b>Login</b>
                     </div>
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to={"/register"}>
+                  <NavLink
+                    to={"/register"}
+                    style={({ isActive }) =>
+                      isActive ? { color: "#50b498" } : {}
+                    }
+                  >
                     <div className="main-white-button">
-                      <i className="fa fa-user-plus"></i> Register
+                      <i className="fa fa-user-plus"></i> <b>Register</b>
                     </div>
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
                   <div className="main-white-button">
