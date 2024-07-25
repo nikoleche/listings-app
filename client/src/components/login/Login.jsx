@@ -4,48 +4,44 @@ export default function Login() {
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-            <div className="inner-content">
-              <div className="row">
-                <div className="col-lg-12 align-self-center">
-                  <form id="contact" action="" method="get">
-                    <div className="row">
-                      <div className="col-lg-4">
-                        <fieldset>
-                          <input
-                            type="email"
-                            name="email"
-                            id="email"
-                            placeholder="Email"
-                            autoComplete="on"
-                            required
-                          />
-                        </fieldset>
-                      </div>
-                      <div className="col-lg-4">
-                        <fieldset>
-                          <input
-                            type="password"
-                            name="password"
-                            id="password"
-                            placeholder="Password"
-                            autoComplete="on"
-                            required
-                          />
-                        </fieldset>
-                      </div>
-                      <div className="col-lg-4">
-                        <fieldset>
-                          <button
-                            type="submit"
-                            id="form-submit"
-                            className="main-button "
-                          >
-                            <i className="fa fa-solid fa-key"></i> Log In
-                          </button>
-                        </fieldset>
+            <div className="contact-page">
+              <div className="container">
+                <div className="row">
+                  <div className="col-lg-12">
+                    <div className="">
+                      {/* removed class inner-content */}
+                      <div className="row justify-content-center">
+                        <div className="col-lg-12 align-self-center">
+                          <form id="contact">
+                            <div className="form-row">
+                              <div className="form-group col-md-12">
+                                <label htmlFor="email">Email</label>
+                                <input
+                                  type="email"
+                                  className="form-control"
+                                  id="email"
+                                  placeholder="user@gmail.com"
+                                />
+                              </div>
+                              <div className="form-group col-md-12">
+                                <label htmlFor="password">Password</label>
+                                <input
+                                  type="password"
+                                  className="form-control"
+                                  id="password"
+                                  placeholder="*********"
+                                />
+                              </div>
+                            </div>
+                            <button className="main-button" type="submit">
+                              <i className="fa fa-solid fa-key"></i>
+                              Log In
+                            </button>
+                          </form>
+                        </div>
                       </div>
                     </div>
-                  </form>
+                  </div>
                 </div>
               </div>
             </div>

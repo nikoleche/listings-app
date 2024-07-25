@@ -1296,9 +1296,15 @@ contact
   border-bottom-left-radius: 7px;
 } */
 
+/* TODO updated form so it appears in the centre of the page */
 form#contact {
-  position: relative;
-  margin: 0px 60px 0px 45px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Add your form styles here */
+  padding: 20px;
+  border-radius: 5px;
 }
 
 form#contact input {
@@ -1313,6 +1319,13 @@ form#contact input {
   color: #000000;
   padding: 0px 15px;
   margin-bottom: 30px;
+}
+
+/* TODO added new CSS to change form text colours */
+
+form#contact .form-row .form-group label {
+  color: white;
+  font-weight: bold;
 }
 
 form#contact ul li {
@@ -1379,7 +1392,7 @@ form#contact button {
   font-weight: 400;
   color: #fff;
   text-transform: capitalize;
-  padding: 12px 25px;
+  padding: 12px 100px;
   border-radius: 7px;
   letter-spacing: 0.25px;
   border: none;

@@ -5,50 +5,49 @@ export default function Register() {
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <div className="top-text header-text">
-                <h2>Register to start adding listings and more</h2>
-                <div className="contact-page">
-                  <div className="container">
-                    <div className="row">
-                      <div className="col-lg-12">
-                        <div className="inner-content">
-                          <div className="row justify-content-center">
-                            <div className="col-lg-12 align-self-center">
-                              <form>
-                                <div className="form-row">
-                                  <div className="form-group col-md-6">
-                                    <label htmlFor="inputEmail4">Email</label>
-                                    <input
-                                      type="email"
-                                      className="form-control"
-                                      id="inputEmail4"
-                                      placeholder="user@gmail.com"
-                                    />
-                                  </div>
-                                  <div className="form-group col-md-6">
-                                    <label htmlFor="inputPassword4">
-                                      Password
-                                    </label>
-                                    <input
-                                      type="password"
-                                      className="form-control"
-                                      id="inputPassword4"
-                                      placeholder="*********"
-                                    />
-                                  </div>
-                                  <div className="form-group col-md-6">
-                                    <label htmlFor="inputPassword4">
-                                      Repeat password
-                                    </label>
-                                    <input
-                                      type="password"
-                                      className="form-control"
-                                      id="repeatPw"
-                                      placeholder="*********"
-                                    />
-                                  </div>
+              {/* <div className="top-text header-text"> */}
+              {/* <h2>Register to start adding listings and more</h2> */}
+              <div className="contact-page">
+                <div className="container">
+                  <div className="row">
+                    <div className="col-lg-12">
+                      <div className="">
+                        {/* removed class inner-content */}
+                        <div className="row justify-content-center">
+                          <div className="col-lg-12 align-self-center">
+                            <form id="contact">
+                              <div className="form-row">
+                                <div className="form-group col-md-12">
+                                  <label htmlFor="email">Email</label>
+                                  <input
+                                    type="email"
+                                    className="form-control"
+                                    id="email"
+                                    placeholder="user@gmail.com"
+                                  />
                                 </div>
-                                <div className="form-group">
+                                <div className="form-group col-md-12">
+                                  <label htmlFor="password">Password</label>
+                                  <input
+                                    type="password"
+                                    className="form-control"
+                                    id="password"
+                                    placeholder="*********"
+                                  />
+                                </div>
+                                <div className="form-group col-md-12">
+                                  <label htmlFor="repeatpw">
+                                    Repeat password
+                                  </label>
+                                  <input
+                                    type="password"
+                                    className="form-control"
+                                    id="repeatpw"
+                                    placeholder="*********"
+                                  />
+                                </div>
+                              </div>
+                              {/* <div className="form-group">
                                   <div className="form-check">
                                     <input
                                       className="form-check-input"
@@ -62,15 +61,12 @@ export default function Register() {
                                       I'm not a robot
                                     </label>
                                   </div>
-                                </div>
-                                <button
-                                  className="main-white-button"
-                                  type="submit"
-                                >
-                                  Register
-                                </button>
-                              </form>
-                            </div>
+                                </div> */}
+                              <button className="main-button" type="submit">
+                                <i className="fa fa-solid fa-key"></i>
+                                Register
+                              </button>
+                            </form>
                           </div>
                         </div>
                       </div>
@@ -78,6 +74,7 @@ export default function Register() {
                   </div>
                 </div>
               </div>
+              {/* </div> */}
             </div>
           </div>
         </div>
