@@ -1,5 +1,8 @@
 import BrowseItem from "./BrowseItem";
 import BrowseMenu from "./BrowseMenu";
+import Recent from "./Recent";
+
+import { Link } from "react-router-dom";
 
 export default function Browse() {
   return (
@@ -99,6 +102,7 @@ export default function Browse() {
           </div>
         </div>
       </div>
+      <Recent />
     </div>
   );
 }

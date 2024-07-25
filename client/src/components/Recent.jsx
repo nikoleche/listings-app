@@ -5,12 +5,12 @@ export default function Recent() {
     <div className="recent-listing">
       <div className="container">
         <div className="row">
-          <div className="col-lg-12">
+          {/* <div className="col-lg-12">
             <div className="section-heading">
               <h2>Recent Listings</h2>
               <h6>Check Them Out</h6>
             </div>
-          </div>
+          </div> */}
           <div className="col-lg-12">
             {/* "owl-carousel owl-listing */}
             <div className="">

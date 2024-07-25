@@ -50,6 +50,14 @@ export default function CategoryData(props) {
               </div>
             </div>
           </div>
+          <div className="col-lg-12">
+            <div className="listing-item">
+              <div className="left-image">
+                <p>Test</p>
+              </div>
+            </div>
+          </div>
+
           {/* <div className="col-lg-12">
             <div className="general-info">
               <div className="row">

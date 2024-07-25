@@ -38,7 +38,7 @@ export default function Header() {
                   </Link>
                 </li>
                 <li>
-                  <Link to={"/login"}>
+                  <Link to={"/register"}>
                     <div className="main-white-button">
                       <i className="fa fa-user-plus"></i> Register
                     </div>

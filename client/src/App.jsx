@@ -1,14 +1,13 @@
 import { Routes, Route } from "react-router-dom";
-import Preloader from "./components/Preloader";
-import Header from "./components/Header";
-import MainBanner from "./components/MainBanner";
-import Browse from "./components/Browse";
-import Recent from "./components/Recent";
-import Footer from "./components/Footer";
 
-import Categories from "./components/Categories";
-import Login from "./components/Login";
+import Preloader from "./components/preloader/Preloader";
+import Header from "./components/header/Header";
+import MainBanner from "./components/home/MainBanner";
 import AllListings from "./components/AllListings";
+import Login from "./components/login/Login";
+import Footer from "./components/footer/Footer";
+import Categories from "./components/categories/Categories";
+import Register from "./components/register/Register";
 
 function App() {
   return (
@@ -27,13 +26,14 @@ function App() {
           }
         />
         <Route path="/category/*" element={<Categories />}>
-          <Route path="restaurants" element={<Categories />} />
+          {/* <Route path="restaurants" element={<Categories />} />
           <Route path="nightlife" element={<Categories />} />
           <Route path="shops" element={<Categories />} />
           <Route path="museums" element={<Categories />} />
-          <Route path="activities" element={<Categories />} />
+          <Route path="activities" element={<Categories />} /> */}
         </Route>
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/all" element={<AllListings />} />
       </Routes>
 

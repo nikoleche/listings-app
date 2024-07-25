@@ -1284,9 +1284,9 @@ contact
 /* TODO updated form background color */
 .contact-page .inner-content {
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #f1f1f1;
   border-radius: 8px;
-  background: #f1f1f1;
+  background: #50b498;
 }
 /* TODO removed map */
 /* .contact-page .inner-content #map {

@@ -90,7 +90,7 @@ export default function MainBanner() {
                       src="assets/images/search-icon-restaurants.png"
                       alt="Restaurants"
                     />
-                  </span>{" "}
+                  </span>
                   <b>Restaurants</b>
                 </a>
               </li>
@@ -101,7 +101,7 @@ export default function MainBanner() {
                       src="assets/images/search-icon-nightlife.png"
                       alt="Nightlife"
                     />
-                  </span>{" "}
+                  </span>
                   <b>Nightlife</b>
                 </a>
               </li>
@@ -112,7 +112,7 @@ export default function MainBanner() {
                       src="assets/images/search-icon-shops.png"
                       alt="Shops"
                     />
-                  </span>{" "}
+                  </span>
                   <b>Shops</b>
                 </a>
               </li>
@@ -123,7 +123,7 @@ export default function MainBanner() {
                       src="assets/images/search-icon-museums.png"
                       alt="Museums"
                     />
-                  </span>{" "}
+                  </span>
                   <b>Museums</b>
                 </a>
               </li>
@@ -134,7 +134,7 @@ export default function MainBanner() {
                       src="assets/images/search-icon-activities.png"
                       alt="Activities"
                     />
-                  </span>{" "}
+                  </span>
                   <b>Activities</b>
                 </a>
               </li>
