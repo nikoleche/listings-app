@@ -26,15 +26,11 @@ export default function ListingItem(props) {
       break;
   }
 
-  const imageURL = `http://localhost:5173/${props.imageURL}`;
-
   return (
     <div className="col-lg-12">
       <div className="listing-item">
         <div className="left-image">
-          <a href="#">
-            <img src={imageURL} alt="imageURL" />
-          </a>
+          <img src={props.imageURL} alt="imageURL" />
         </div>
         <div className="right-content align-self-top">
           <h4>{props.title}</h4>
