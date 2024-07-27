@@ -8,6 +8,7 @@ import Login from "./components/login/Login";
 import Footer from "./components/footer/Footer";
 import Categories from "./components/categories/Categories";
 import Register from "./components/register/Register";
+import Recent from "./components/Recent";
 
 function App() {
   return (
@@ -34,7 +35,9 @@ function App() {
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/all" element={<AllListings />} />
+        <Route path="/all/*" element={<AllListings />}>
+          <Route path="restaurants" element={<Recent />} />
+        </Route>
       </Routes>
 
       {/* <Browse /> */}

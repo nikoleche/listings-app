@@ -932,10 +932,12 @@ form#search-form button i {
 ---------------------------------------
 Popular Categories
 ---------------------------------------
-*/
 
+*/
+/* TODO added margin bottom so that elements don't overlap*/
 .popular-categories {
   margin-top: 120px;
+  margin-bottom: 120px;
 }
 
 .popular-categories .section-heading {

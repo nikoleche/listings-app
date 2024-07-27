@@ -1,95 +1,75 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
+
 export default function ListingItem(props) {
   let categoryURL = "";
   switch (props.category) {
-    case "Houses":
-      categoryURL = "assets/images/search-icon-houses.png";
+    case "Restaurants":
+      categoryURL =
+        "http://localhost:5173/assets/images/search-icon-restaurants.png";
       break;
-    case "Apartments":
-      categoryURL = "assets/images/search-icon-apartments.png";
+    case "Nightlife":
+      categoryURL =
+        "http://localhost:5173/assets/images/search-icon-nightlife.png";
       break;
-    case "Retail":
-      categoryURL = "assets/images/search-icon-retail.png";
+    case "Shops":
+      categoryURL = "http://localhost:5173/assets/images/search-icon-shops.png";
       break;
-    case "Venues":
-      categoryURL = "assets/images/search-icon-venues.png";
+    case "Museums":
+      categoryURL =
+        "http://localhost:5173/assets/images/search-icon-museums.png";
       break;
-    case "Storage Units":
-      categoryURL = "assets/images/search-icon-storage.png";
+    case "Activities":
+      categoryURL =
+        "http://localhost:5173/assets/images/search-icon-activities.png";
       break;
   }
+
+  const imageURL = `http://localhost:5173/${props.imageURL}`;
 
   return (
     <div className="col-lg-12">
       <div className="listing-item">
         <div className="left-image">
           <a href="#">
-            <img src={props.imageURL} alt="imageURL" />
+            <img src={imageURL} alt="imageURL" />
           </a>
         </div>
-        <div className="right-content align-self-center">
-          <a href="#">
-            <h4>{props.title}</h4>
-          </a>
-          {/* <h6>by: {props.author}</h6> */}
-          <h6>{props.location}, New York</h6>
-          <ul className="rate">
-            {/* <li>
-              <i className="fa fa-star-o"></i>
-            </li>
-            <li>
-              <i className="fa fa-star-o"></i>
-            </li>
-            <li>
-              <i className="fa fa-star-o"></i>
-            </li>
-            <li>
-              <i className="fa fa-star-o"></i>
-            </li>
-            <li>
-              <i className="fa fa-star-o"></i>
-            </li> */}
-            <li>
-              <a href="contact.html">
-                <i className="fa fa-eye"></i> Add to favorites
-              </a>
-            </li>
-            <li>
-              {" "}
-              <span className="icon">
-                <img src={categoryURL} alt="category" />
-              </span>
-            </li>
-          </ul>
-          <span className="price">
-            <div className="icon">
-              <img src="assets/images/listing-icon-dollar.png" alt="Price" />
-            </div>{" "}
-            $ {props.price}
-          </span>
-          <span className="More Details">
-            {/* TODO REMOVED THIS: */}
-            {/* More Details: <em>2760 sq ft</em> */}
-          </span>
-          <ul className="info">
-            {/* <li>
-              <img
-                src="assets/images/listing-icon-location.png"
-                alt="Location"
-              />
-              {props.location}
-            </li> */}
-            <li>
-              <img src="assets/images/listing-icon-bed.png" alt="Bedrooms" />
-              {props.bed} Bedrooms
-            </li>
-            <li>
-              <img src="assets/images/listing-icon-tub.png" alt="Bathrooms" />{" "}
-              {props.bath} Bathrooms
-            </li>
-          </ul>
+        <div className="right-content align-self-top">
+          <h4>{props.title}</h4>
+          <br></br>
+          <div className="left-content align-self-center">
+            <ul className="rate">
+              <li>
+                <a href="contact.html">
+                  <FontAwesomeIcon icon={faHeart} /> Add to favorites
+                </a>
+              </li>
+            </ul>
+            <ul className="info">
+              <li>
+                <img
+                  src="http://localhost:5173/assets/images/listing-icon-dollar.png"
+                  alt="Price"
+                />
+                $ {props.price}
+              </li>
+              <li>
+                <img
+                  src="http://localhost:5173/assets/images/listing-icon-location.png"
+                  alt="Location"
+                />
+                {props.location}
+              </li>
+              <li>
+                <img src={categoryURL} alt="Category" /> {props.category}
+              </li>
+            </ul>
+          </div>
           <div className="main-white-button">
             <a href="contact.html">
-              <i className="fa fa-info"></i> More Details
+              <FontAwesomeIcon icon={faCircleInfo} /> More Details
             </a>
           </div>
         </div>

@@ -17,7 +17,7 @@ export default function Recent() {
               <div className="item">
                 <div className="row">
                   <ListingItem
-                    category="Apartments"
+                    category="Restaurants"
                     imageURL="assets/images/listing-01.jpg"
                     title="Cozy apartment in Downtown area"
                     // author="Food Author"
@@ -27,7 +27,7 @@ export default function Recent() {
                     bath="2"
                   />
                   <ListingItem
-                    category="Retail"
+                    category="Museums"
                     imageURL="assets/images/listing-02.jpg"
                     title="Sightseeing"
                     // author="Sightseeing Author"
@@ -37,7 +37,7 @@ export default function Recent() {
                     bath="2"
                   />
                   <ListingItem
-                    category="Storage Units"
+                    category="Shops"
                     imageURL="assets/images/listing-04.jpg"
                     title="Shopping"
                     // author="Shopping Author"
@@ -47,7 +47,7 @@ export default function Recent() {
                     bath="2"
                   />
                   <ListingItem
-                    category="Venues"
+                    category="Nightlife"
                     imageURL="assets/images/listing-04.jpg"
                     title="Rentals"
                     // author="Rentals Author"
@@ -57,7 +57,7 @@ export default function Recent() {
                     bath="2"
                   />
                   <ListingItem
-                    category="Houses"
+                    category="Activities"
                     imageURL="assets/images/listing-04.jpg"
                     title="Entertainment"
                     // author="Entertainment Author"

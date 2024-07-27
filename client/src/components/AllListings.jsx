@@ -1,4 +1,6 @@
 import Browse from "./Browse";
+import { Link, Outlet } from "react-router-dom";
+import Recent from "./Recent";
 
 export default function AllListings() {
   return (
@@ -6,16 +8,28 @@ export default function AllListings() {
       <div className="page-heading">
         <div className="container">
           <div className="row">
-            <div className="col-lg-8">
+            <div className="col-lg-12">
               <div className="top-text header-text">
-                <h6>Check Out Our Listings</h6>
-                <h2>Item listings of Different Categories</h2>
+                {/* top-text header-text */}
+                <h2>Browse through all available listings, unsorted</h2>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <Browse />
+
+      {/* <Browse /> */}
+
+      {/* <div className="container">
+        <nav
+          className="navbar navbar-light"
+          style={{ backgroundColor: "#50b498" }}
+        >
+          <Link to={"/all/restaurants"}>Restaurants</Link>
+        </nav>
+        <Outlet />
+      </div> */}
+      <Recent />
     </>
   );
 }

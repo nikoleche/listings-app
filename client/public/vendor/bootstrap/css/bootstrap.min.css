@@ -4160,15 +4160,21 @@ fieldset:disabled .btn {
   display: block;
 }
 
+/* TODO updated page navbar styles */
 .navbar {
-  position: relative;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  justify-content: flex-start; /* Align items to the start (left) */
+  align-items: center; /* Vertically center the items */
+  background-color: #50b498;
+  height: 50px; /* Adjust the height as needed */
+  padding-left: 120px; /* Adjust the padding to move text slightly to the left */
+  color: white; /* Make the text color white */
+  font-weight: bold; /* Make the font bold */
+  font-size: x-large;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
+
 .navbar > .container,
 .navbar > .container-fluid,
 .navbar > .container-sm,
