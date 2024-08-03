@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
+import listingsAPI from "../api/listingsAPI";
 
 export function useGetAllListings() {
   const [listings, setListings] = useState([]);
 
   useEffect(() => {
     (async () => {
-      const response = await fetch("http://localhost:3030/jsonstore/listings");
-      const result = await response.json();
-      setListings(Object.values(result));
+      const result = await listingsAPI.getAll();
+      setListings(result);
     })();
   }, []);
   return [listings];

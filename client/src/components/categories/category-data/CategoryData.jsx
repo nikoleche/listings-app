@@ -1,3 +1,5 @@
+import Recent from "../../Recent";
+
 export default function CategoryData(props) {
   return (
     <div>
