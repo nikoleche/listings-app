@@ -1,16 +1,8 @@
-import { useEffect, useState } from "react";
 import ListingItem from "./ListingItem";
+import { useGetAllListings } from "../hooks/useListings";
 
 export default function Recent() {
-  const [listings, setListings] = useState([]);
-
-  useEffect(() => {
-    (async () => {
-      const response = await fetch("http://localhost:3030/jsonstore/listings");
-      const result = await response.json();
-      setListings(Object.values(result));
-    })();
-  }, []);
+  const [listings] = useGetAllListings();
 
   return (
     <div className="recent-listing">
