@@ -20,7 +20,6 @@ export function useGetListing(listingId) {
     (async () => {
       const result = await listingsAPI.getListing(listingId);
       setListing(result);
-      console.log("result " + result);
     })();
   }, [listingId]);
   return [listing, setListing];

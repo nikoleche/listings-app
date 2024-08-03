@@ -1,10 +1,14 @@
+import { useRef } from "react";
 import CategoryData from "./category-data/CategoryData";
 import CategoryItem from "./category-item/CategoryItem";
+import { useScroll } from "../../hooks/useScroll";
 
 export default function Categories() {
+  const scrollRef = useRef(null);
+  useScroll(scrollRef);
   return (
     <>
-      <div className="page-heading">
+      <div className="page-heading" ref={scrollRef}>
         <div className="container">
           <div className="row">
             <div className="col-lg-12">

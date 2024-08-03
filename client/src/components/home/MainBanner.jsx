@@ -1,6 +1,11 @@
+import { useRef } from "react";
+import { useScroll } from "../../hooks/useScroll";
+
 export default function MainBanner() {
+  const scrollRef = useRef(null);
+  useScroll(scrollRef);
   return (
-    <div className="main-banner">
+    <div className="main-banner" ref={scrollRef}>
       <div className="container">
         <div className="row">
           <div className="col-lg-12">

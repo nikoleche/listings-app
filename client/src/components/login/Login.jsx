@@ -1,6 +1,11 @@
+import { useRef } from "react";
+import { useScroll } from "../../hooks/useScroll";
+
 export default function Login() {
+  const scrollRef = useRef(null);
+  useScroll(scrollRef);
   return (
-    <div className="page-heading">
+    <div className="page-heading" ref={scrollRef}>
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
@@ -21,6 +26,7 @@ export default function Login() {
                                   className="form-control"
                                   id="email"
                                   placeholder="user@gmail.com"
+                                  autoFocus="true"
                                 />
                               </div>
                               <div className="form-group col-md-12">

@@ -1,12 +1,18 @@
 import { Link, useParams } from "react-router-dom";
 
+import { useRef } from "react";
+import { useGetListing } from "../../../../hooks/useListings";
+import { useScroll } from "../../../../hooks/useScroll";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { useGetListing } from "../../../../hooks/useListings";
 
 export default function ListingDetails() {
   const { listingId } = useParams();
   const [listing, setListing] = useGetListing(listingId);
+
+  const scrollRef = useRef(null);
+  useScroll(scrollRef);
 
   return (
     <>
@@ -15,7 +21,6 @@ export default function ListingDetails() {
           <div className="row">
             <div className="col-lg-12">
               <div className="top-text header-text">
-                {/* top-text header-text */}
                 <h2>Listing details</h2>
               </div>
             </div>
@@ -23,7 +28,7 @@ export default function ListingDetails() {
         </div>
       </div>
 
-      <div className="recent-listing">
+      <div className="recent-listing" ref={scrollRef}>
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
@@ -40,11 +45,32 @@ export default function ListingDetails() {
                       <div className="left-content align-self-center">
                         <ul className="info">
                           <li>
+                            <div className="main-white-button">
+                              <Link to={`/listings/details`}>
+                                <FontAwesomeIcon icon={faHeart} />
+                              </Link>
+                            </div>
+                          </li>
+                          <li>
                             <img
                               src="http://localhost:5173/assets/images/listing-icon-dollar.png"
                               alt="Price"
                             />
                             $ {listing.price}
+                          </li>
+                          <li>
+                            <img
+                              src="http://localhost:5173/assets/images/listing-icon-location.png"
+                              alt="Location"
+                            />
+                            {listing.location}
+                          </li>
+                          <li>
+                            <img
+                              src="http://localhost:5173/assets/images/listing-icon-location.png"
+                              alt="Location"
+                            />
+                            {listing.location}
                           </li>
                           <li>
                             <img
@@ -61,11 +87,6 @@ export default function ListingDetails() {
                             {listing.category}
                           </li> */}
                         </ul>
-                      </div>
-                      <div className="main-white-button">
-                        <Link to={`/listings/details`}>
-                          <FontAwesomeIcon icon={faHeart} />
-                        </Link>
                       </div>
                     </div>
                   </div>
