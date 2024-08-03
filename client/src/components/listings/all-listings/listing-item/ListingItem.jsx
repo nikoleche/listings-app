@@ -1,8 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 export default function ListingItem(props) {
+  console.log(props);
   let categoryURL = "";
   switch (props.category) {
     case "Restaurants":
@@ -64,9 +66,9 @@ export default function ListingItem(props) {
             </ul>
           </div>
           <div className="main-white-button">
-            <a href="contact.html">
+            <Link to={`/listings/details/${props._id}`}>
               <FontAwesomeIcon icon={faCircleInfo} /> More Details
-            </a>
+            </Link>
           </div>
         </div>
       </div>

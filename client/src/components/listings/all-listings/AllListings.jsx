@@ -1,5 +1,5 @@
-import ListingItem from "./ListingItem";
-import { useGetAllListings } from "../hooks/useListings";
+import ListingItem from "./listing-item/ListingItem";
+import { useGetAllListings } from "../../../hooks/useListings";
 
 export default function Recent() {
   const [listings] = useGetAllListings();

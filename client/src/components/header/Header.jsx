@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 export default function Header() {
   return (
     <header
@@ -37,12 +37,12 @@ export default function Header() {
                 </li>
                 <li>
                   <NavLink
-                    to={"/all"}
+                    to={"/listings"}
                     style={({ isActive }) =>
                       isActive ? { color: "#50b498" } : {}
                     }
                   >
-                    <b>All Listings</b>
+                    <b>Listings</b>
                   </NavLink>
                 </li>
                 <li>

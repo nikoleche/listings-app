@@ -1346,7 +1346,7 @@
     "title": "Fine Restaurant",
     "price": "900",
     "location": "Queens",
-    "description": "Lorem ipsum",
+    "description": "Fine Dining is an upscale restaurant located in the heart of New York City, offering an exquisite culinary experience that blends modern gastronomy with timeless elegance. The restaurant features an extensive wine list curated to complement each dish, making it a premier destination for both special occasions and refined dining.",
     "_id": "10383107-ea81-4097-b85c-59bd77fc71db"
   },
   "63d3f8a5-1e86-445a-9ca4-05fd89df6f28": {
@@ -1357,7 +1357,16 @@
     "location": "Times Square",
     "description": "Lorem ipsum",
     "_id": "63d3f8a5-1e86-445a-9ca4-05fd89df6f28"
-  }
+  },
+  "10383107-ea81-4097-b85c-59bd77fc71dt": {
+    "category": "Museums",
+    "imageURL": "http://localhost:5173/assets/images/listing-04.jpg",
+    "title": "Fine Museum",
+    "price": "2000",
+    "location": "Manhattan",
+    "description": "Lorem ipsum",
+    "_id": "10383107-ea81-4097-b85c-59bd77fc71db"
+  },
  }
 }
     var rules$1 = {

@@ -3,12 +3,13 @@ import { Routes, Route } from "react-router-dom";
 import Preloader from "./components/preloader/Preloader";
 import Header from "./components/header/Header";
 import MainBanner from "./components/home/MainBanner";
-import AllListings from "./components/AllListings";
 import Login from "./components/login/Login";
 import Footer from "./components/footer/Footer";
 import Categories from "./components/categories/Categories";
 import Register from "./components/register/Register";
-import Recent from "./components/Recent";
+// import Recent from "./components/Recent";
+import Listings from "./components/listings/Listings";
+import ListingDetails from "./components/listings/all-listings/listing-details/ListingDetails";
 
 function App() {
   return (
@@ -35,9 +36,11 @@ function App() {
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/all/*" element={<AllListings />}>
-          <Route path="restaurants" element={<Recent />} />
-        </Route>
+        <Route path="/listings" element={<Listings />} />
+        <Route
+          path="/listings/details/:listingId"
+          element={<ListingDetails />}
+        />
       </Routes>
 
       {/* <Browse /> */}

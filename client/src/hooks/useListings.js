@@ -12,3 +12,16 @@ export function useGetAllListings() {
   }, []);
   return [listings];
 }
+
+export function useGetListing(listingId) {
+  const [listing, setListing] = useState({});
+
+  useEffect(() => {
+    (async () => {
+      const result = await listingsAPI.getListing(listingId);
+      setListing(result);
+      console.log("result " + result);
+    })();
+  }, [listingId]);
+  return [listing, setListing];
+}

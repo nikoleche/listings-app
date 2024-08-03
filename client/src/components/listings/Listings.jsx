@@ -1,8 +1,6 @@
-import Browse from "./Browse";
-import { Link, Outlet } from "react-router-dom";
-import Recent from "./Recent";
+import AllListings from "./all-listings/AllListings";
 
-export default function AllListings() {
+export default function Listings() {
   return (
     <>
       <div className="page-heading">
@@ -29,7 +27,7 @@ export default function AllListings() {
         </nav>
         <Outlet />
       </div> */}
-      <Recent />
+      <AllListings />
     </>
   );
 }
