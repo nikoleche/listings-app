@@ -29,7 +29,7 @@ export default function Register() {
                                     className="form-control"
                                     id="email"
                                     placeholder="user@gmail.com"
-                                    autoFocus="true"
+                                    autoFocus={true}
                                   />
                                 </div>
                                 <div className="form-group col-md-12">

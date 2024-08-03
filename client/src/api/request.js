@@ -1,6 +1,10 @@
 async function request(method, url, data) {
   const options = {};
 
+  if (method !== "GET") {
+    options.method = method;
+  }
+
   if (data) {
     options.headers = {
       ...options.headers,
@@ -13,7 +17,7 @@ async function request(method, url, data) {
   const result = await response.json();
 
   if (!response.ok) {
-    throw result;
+    throw Error;
   }
   return result;
 }
