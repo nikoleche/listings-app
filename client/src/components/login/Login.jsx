@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useScroll } from "../../hooks/useScroll";
 import { useLogin } from "../../hooks/useAuth";
@@ -13,6 +13,8 @@ export default function Login() {
   const scrollRef = useRef(null);
   useScroll(scrollRef);
 
+  const [error, setError] = useState("");
+
   const login = useLogin();
   const navigate = useNavigate();
 
@@ -21,9 +23,11 @@ export default function Login() {
       await login(email, password);
       navigate("/");
     } catch (error) {
-      console.log(error.message);
+      setError("Incorrect username or password");
     }
   }
+
+  console.log(error);
 
   const { formValues, updateHandler, submitHandler } = useForm(
     initialValues,
@@ -71,6 +75,11 @@ export default function Login() {
                                 />
                               </div>
                             </div>
+                            {error && (
+                              <div class="alert alert-danger" role="alert">
+                                {error}
+                              </div>
+                            )}
                             <button className="main-button" type="submit">
                               <i className="fa fa-solid fa-key"></i>
                               Log In
