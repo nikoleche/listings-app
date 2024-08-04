@@ -15,7 +15,7 @@ export default function Header() {
         <div className="row">
           <div className="col-12">
             <nav className="main-nav">
-              <a href="index.html" className="logo"></a>
+              <a href="/" className="logo"></a>
               <ul className="nav">
                 <li>
                   <NavLink

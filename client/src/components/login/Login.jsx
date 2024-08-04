@@ -80,7 +80,7 @@ export default function Login() {
                             )}
                             <div>
                               <p style={{ color: "white" }}>
-                                Don't have an account?{" "}
+                                Don't have an account?
                                 <Link to={"http://localhost:5173/register"}>
                                   Register here.
                                 </Link>
