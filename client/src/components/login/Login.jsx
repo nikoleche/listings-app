@@ -23,11 +23,9 @@ export default function Login() {
       await login(email, password);
       navigate("/");
     } catch (error) {
-      setError("Incorrect username or password");
+      setError("Error: Wrong email or password");
     }
   }
-
-  console.log(error);
 
   const { formValues, updateHandler, submitHandler } = useForm(
     initialValues,

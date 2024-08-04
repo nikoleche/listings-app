@@ -1,17 +1,53 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useScroll } from "../../hooks/useScroll";
+import { useRegister } from "../../hooks/useAuth";
+import { useForm } from "../../hooks/useForm";
+
+const initialValues = {
+  email: "",
+  password: "",
+  repeatpw: "",
+};
 
 export default function Register() {
   const scrollRef = useRef(null);
   useScroll(scrollRef);
+
+  const [error, setError] = useState("");
+  const register = useRegister();
+  const navigate = useNavigate();
+
+  async function registerHandler({ email, password, repeatpw }) {
+    // basic error handling
+    if (password !== repeatpw) {
+      return setError("Error: Passwords don't match");
+    }
+
+    if (!email || !password || !repeatpw) {
+      return setError("Error: All fields are required");
+    }
+
+    try {
+      await register(email, password);
+      console.log("try");
+      navigate("/");
+    } catch (error) {
+      setError(error.message);
+    }
+  }
+
+  const { formValues, updateHandler, submitHandler } = useForm(
+    initialValues,
+    registerHandler
+  );
+
   return (
     <>
       <div className="page-heading" ref={scrollRef}>
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              {/* <div className="top-text header-text"> */}
-              {/* <h2>Register to start adding listings and more</h2> */}
               <div className="contact-page">
                 <div className="container">
                   <div className="row">
@@ -20,7 +56,7 @@ export default function Register() {
                         {/* removed class inner-content */}
                         <div className="row justify-content-center">
                           <div className="col-lg-12 align-self-center">
-                            <form id="contact">
+                            <form id="contact" onSubmit={submitHandler}>
                               <div className="form-row">
                                 <div className="form-group col-md-12">
                                   <label htmlFor="email">Email</label>
@@ -28,8 +64,11 @@ export default function Register() {
                                     type="email"
                                     className="form-control"
                                     id="email"
+                                    name="email"
                                     placeholder="user@gmail.com"
                                     autoFocus={true}
+                                    value={formValues.email}
+                                    onChange={updateHandler}
                                   />
                                 </div>
                                 <div className="form-group col-md-12">
@@ -38,7 +77,10 @@ export default function Register() {
                                     type="password"
                                     className="form-control"
                                     id="password"
+                                    name="password"
                                     placeholder="*********"
+                                    value={formValues.password}
+                                    onChange={updateHandler}
                                   />
                                 </div>
                                 <div className="form-group col-md-12">
@@ -49,25 +91,18 @@ export default function Register() {
                                     type="password"
                                     className="form-control"
                                     id="repeatpw"
+                                    name="repeatpw"
                                     placeholder="*********"
+                                    value={formValues.repeatpw}
+                                    onChange={updateHandler}
                                   />
                                 </div>
                               </div>
-                              {/* <div className="form-group">
-                                  <div className="form-check">
-                                    <input
-                                      className="form-check-input"
-                                      type="checkbox"
-                                      id="gridCheck"
-                                    />
-                                    <label
-                                      className="form-check-label"
-                                      htmlFor="gridCheck"
-                                    >
-                                      I'm not a robot
-                                    </label>
-                                  </div>
-                                </div> */}
+                              {error && (
+                                <div class="alert alert-danger" role="alert">
+                                  {error}
+                                </div>
+                              )}
                               <button className="main-button" type="submit">
                                 <i className="fa fa-solid fa-pencil"></i>
                                 Register
@@ -80,7 +115,6 @@ export default function Register() {
                   </div>
                 </div>
               </div>
-              {/* </div> */}
             </div>
           </div>
         </div>

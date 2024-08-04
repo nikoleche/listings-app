@@ -67,25 +67,18 @@ export default function ListingDetails() {
                           </li>
                           <li>
                             <img
-                              src="http://localhost:5173/assets/images/listing-icon-location.png"
+                              src="http://localhost:5173/assets/images/listing-icon-telephone.png"
                               alt="Location"
                             />
-                            {listing.location}
+                            {listing.telephone}
                           </li>
                           <li>
                             <img
-                              src="http://localhost:5173/assets/images/listing-icon-location.png"
+                              src="http://localhost:5173/assets/images/listing-icon-email.png"
                               alt="Location"
                             />
-                            {listing.location}
+                            {listing.email}
                           </li>
-                          {/* <li>
-                            <img
-                              src="http://localhost:5173/assets/images/listing-icon-dollar.png"
-                              alt="Category"
-                            />
-                            {listing.category}
-                          </li> */}
                         </ul>
                       </div>
                     </div>
