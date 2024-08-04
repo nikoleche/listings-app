@@ -17,8 +17,9 @@ async function request(method, url, data) {
   const result = await response.json();
 
   if (!response.ok) {
-    throw Error;
+    throw response;
   }
+  console.log(result);
   return result;
 }
 

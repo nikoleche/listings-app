@@ -7,7 +7,7 @@ export default function Listings() {
   useScroll(scrollRef);
   return (
     <>
-      <div className="page-heading" ref={scrollRef}>
+      <div className="page-heading">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
@@ -31,7 +31,9 @@ export default function Listings() {
         </nav>
         <Outlet />
       </div> */}
-      <AllListings />
+      <div ref={scrollRef}>
+        <AllListings />
+      </div>
     </>
   );
 }

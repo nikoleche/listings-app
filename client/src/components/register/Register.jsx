@@ -19,7 +19,7 @@ export default function Register() {
   const navigate = useNavigate();
 
   async function registerHandler({ email, password, repeatpw }) {
-    // basic error handling
+    // Error handling
     if (password !== repeatpw) {
       return setError("Error: Passwords don't match");
     }
@@ -30,10 +30,12 @@ export default function Register() {
 
     try {
       await register(email, password);
-      console.log("try");
       navigate("/");
     } catch (error) {
-      setError(error.message);
+      console.log(error.status);
+      if (error.status === 409) {
+        setError("Error: Username already exists");
+      }
     }
   }
 
@@ -99,7 +101,10 @@ export default function Register() {
                                 </div>
                               </div>
                               {error && (
-                                <div class="alert alert-danger" role="alert">
+                                <div
+                                  className="alert alert-danger"
+                                  role="alert"
+                                >
                                   {error}
                                 </div>
                               )}
