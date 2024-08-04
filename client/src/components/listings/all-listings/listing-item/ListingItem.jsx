@@ -4,7 +4,6 @@ import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 export default function ListingItem(props) {
-  console.log(props);
   let categoryURL = "";
   switch (props.category) {
     case "Restaurants":

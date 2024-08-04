@@ -23,7 +23,6 @@ export default function Login() {
       await login(email, password);
       navigate("/");
     } catch (error) {
-      console.log(error.status);
       setError("Error: Wrong email or password");
     }
   }

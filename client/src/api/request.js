@@ -19,7 +19,6 @@ async function request(method, url, data) {
   if (!response.ok) {
     throw response;
   }
-  console.log(result);
   return result;
 }
 
