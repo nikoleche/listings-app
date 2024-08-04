@@ -448,11 +448,11 @@ header
   color: #50b498 !important;
   opacity: 1;
 }
-/* TODO BACKGROUND COLOR MAIN MENU BUTTON */
-.header-area .main-nav .nav li:last-child a:hover,
+/* TODO BACKGROUND COLOR MAIN MENU BUTTON, NOT NEEDED */
+/* .header-area .main-nav .nav li:last-child a:hover,
 .background-header .main-nav .nav li:last-child a:hover {
   background-color: #2e927b;
-}
+} */
 
 .header-area .main-nav .nav li.has-sub {
   position: relative;
