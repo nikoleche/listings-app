@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useScroll } from "../../hooks/useScroll";
 import { useRegister } from "../../hooks/useAuth";
 import { useForm } from "../../hooks/useForm";
@@ -32,7 +32,6 @@ export default function Register() {
       await register(email, password);
       navigate("/");
     } catch (error) {
-      console.log(error.status);
       if (error.status === 409) {
         setError("Error: Username already exists");
       }
@@ -108,6 +107,15 @@ export default function Register() {
                                   {error}
                                 </div>
                               )}
+                              <div>
+                                <p style={{ color: "white" }}>
+                                  Already have an account?{" "}
+                                  <Link to={"http://localhost:5173/login"}>
+                                    Log in here.
+                                  </Link>
+                                  .
+                                </p>
+                              </div>
                               <button className="main-button" type="submit">
                                 <i className="fa fa-solid fa-pencil"></i>
                                 Register

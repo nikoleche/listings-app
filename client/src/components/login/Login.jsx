@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useScroll } from "../../hooks/useScroll";
 import { useLogin } from "../../hooks/useAuth";
 import { useForm } from "../../hooks/useForm";
@@ -23,6 +23,7 @@ export default function Login() {
       await login(email, password);
       navigate("/");
     } catch (error) {
+      console.log(error.status);
       setError("Error: Wrong email or password");
     }
   }
@@ -78,6 +79,15 @@ export default function Login() {
                                 {error}
                               </div>
                             )}
+                            <div>
+                              <p style={{ color: "white" }}>
+                                Don't have an account?{" "}
+                                <Link to={"http://localhost:5173/register"}>
+                                  Register here.
+                                </Link>
+                                .
+                              </p>
+                            </div>
                             <button className="main-button" type="submit">
                               <i className="fa fa-solid fa-key"></i>
                               Log In
