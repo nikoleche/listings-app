@@ -7,7 +7,6 @@ export const login = async (email, password) => {
     email,
     password,
   });
-  console.log(authData);
   return authData;
 };
 

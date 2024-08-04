@@ -1,3 +1,5 @@
+import Recent from "../../listings/all-listings/AllListings";
+
 export default function CategoryData(props) {
   return (
     <div>

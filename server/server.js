@@ -1341,7 +1341,7 @@
     var seedData = {
    listings: {
   "10383107-ea81-4097-b85c-59bd77fc71db": {
-    "category": "Restaurants",
+    "category": "restaurants",
     "imageURL": "http://localhost:5173/assets/images/listing-04.jpg",
     "title": "Fine Restaurant",
     "price": "900 per person",
@@ -1352,7 +1352,7 @@
     "_id": "10383107-ea81-4097-b85c-59bd77fc71db"
   },
   "63d3f8a5-1e86-445a-9ca4-05fd89df6f28": {
-    "category": "Restaurants",
+    "category": "restaurants",
     "imageURL": "http://localhost:5173/assets/images/listing-01.jpg",
     "title": "New Foods",
     "price": "2000 per person",
@@ -1363,7 +1363,7 @@
     "_id": "63d3f8a5-1e86-445a-9ca4-05fd89df6f28"
   },
   "10383107-ea81-4097-b85c-59bd77fc71dt": {
-    "category": "Museums",
+    "category": "museums",
     "imageURL": "http://localhost:5173/assets/images/listing-04.jpg",
     "title": "Seaworld Museum",
     "price": "2000 per person",

@@ -24,3 +24,15 @@ export function useGetListing(listingId) {
   }, [listingId]);
   return [listing, setListing];
 }
+
+export function useGetListingsByCategory(categoryId) {
+  const [listings, setListings] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const result = await listingsAPI.getByCategory(categoryId);
+      setListings(result);
+    })();
+  }, [categoryId]);
+  return [listings];
+}

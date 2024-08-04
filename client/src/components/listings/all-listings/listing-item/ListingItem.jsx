@@ -5,25 +5,31 @@ import { Link } from "react-router-dom";
 
 export default function ListingItem(props) {
   let categoryURL = "";
+  let categoryName = "";
   switch (props.category) {
-    case "Restaurants":
+    case "restaurants":
       categoryURL =
         "http://localhost:5173/assets/images/search-icon-restaurants.png";
+      categoryName = "Restaurants";
       break;
-    case "Nightlife":
+    case "nightlife":
       categoryURL =
         "http://localhost:5173/assets/images/search-icon-nightlife.png";
+      categoryName = "Nightlife";
       break;
-    case "Shops":
+    case "shops":
       categoryURL = "http://localhost:5173/assets/images/search-icon-shops.png";
+      categoryName = "Shops";
       break;
-    case "Museums":
+    case "museums":
       categoryURL =
         "http://localhost:5173/assets/images/search-icon-museums.png";
+      categoryName = "Museums";
       break;
-    case "Activities":
+    case "activities":
       categoryURL =
         "http://localhost:5173/assets/images/search-icon-activities.png";
+      categoryName = "Activities";
       break;
   }
 
@@ -60,7 +66,8 @@ export default function ListingItem(props) {
                 {props.location}
               </li>
               <li>
-                <img src={categoryURL} alt="Category" /> {props.category}
+                <img src={categoryURL} alt="Category" />
+                {categoryName}
               </li>
             </ul>
           </div>

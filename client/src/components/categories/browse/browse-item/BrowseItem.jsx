@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function BrowseItem(props) {
   return (
     <div>
@@ -8,9 +10,9 @@ export default function BrowseItem(props) {
               <h4>{props.title}</h4>
               <p>{props.text}</p>
               <div className="main-white-button">
-                <a href="#">
+                <Link to={props.category}>
                   <i className="fa fa-info"></i> Discover {props.category}
-                </a>
+                </Link>
               </div>
             </div>
           </div>

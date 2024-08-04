@@ -8,10 +8,10 @@ import Login from "./components/login/Login";
 import Footer from "./components/footer/Footer";
 import Categories from "./components/categories/Categories";
 import Register from "./components/register/Register";
-// import Recent from "./components/Recent";
 import Listings from "./components/listings/Listings";
 import ListingDetails from "./components/listings/all-listings/listing-details/ListingDetails";
 import { AuthContext } from "./contexts/authContext";
+import ListingsByCategory from "./components/categories/category/ListingsByCategory";
 
 function App() {
   const [authState, setAuthSTate] = useState({});
@@ -34,21 +34,9 @@ function App() {
 
         <Header />
         <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <MainBanner />
-                {/* <Browse /> */}
-              </>
-            }
-          />
+          <Route path="/" element={<MainBanner />} />
           <Route path="/category/*" element={<Categories />}>
-            {/* <Route path="restaurants" element={<Categories />} />
-          <Route path="nightlife" element={<Categories />} />
-          <Route path="shops" element={<Categories />} />
-          <Route path="museums" element={<Categories />} />
-          <Route path="activities" element={<Categories />} /> */}
+            <Route path=":categoryId" element={<ListingsByCategory />} />
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
@@ -58,11 +46,6 @@ function App() {
             element={<ListingDetails />}
           />
         </Routes>
-
-        {/* <Browse /> */}
-        {/* TODO */}
-        {/* <Recent /> */}
-
         <Footer />
       </AuthContext.Provider>
     </>
