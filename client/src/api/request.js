@@ -1,5 +1,13 @@
 async function request(method, url, data) {
   const options = {};
+  const accessToken = localStorage.getItem("accessToken");
+
+  if (accessToken) {
+    options.headers = {
+      ...options.headers,
+      "X-Authorization": accessToken,
+    };
+  }
 
   if (method !== "GET") {
     options.method = method;
@@ -14,6 +22,11 @@ async function request(method, url, data) {
   }
 
   const response = await fetch(url, options);
+
+  if (response.status === 204) {
+    return;
+  }
+
   const result = await response.json();
 
   if (!response.ok) {

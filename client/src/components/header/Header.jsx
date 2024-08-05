@@ -1,9 +1,16 @@
-import { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { AuthContext } from "../../contexts/authContext";
+import { AuthContext, useAuthContext } from "../../contexts/AuthContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUserGroup,
+  faUserCheck,
+  faUserLock,
+  faUserPlus,
+  faUserXmark,
+} from "@fortawesome/free-solid-svg-icons";
+
 export default function Header() {
-  const { isAuthenticated } = useContext(AuthContext);
-  console.log(isAuthenticated);
+  const { isAuthenticated } = useAuthContext();
 
   return (
     <header
@@ -50,6 +57,17 @@ export default function Header() {
                 {isAuthenticated ? (
                   <>
                     <li>
+                      <NavLink
+                        to={"/logout"}
+                        style={({ isActive }) =>
+                          isActive ? { color: "#50b498" } : {}
+                        }
+                      >
+                        <FontAwesomeIcon icon={faUserXmark} />
+                        <b>&nbsp;Logout</b>
+                      </NavLink>
+                    </li>
+                    <li>
                       <div className="main-white-button">
                         <a href="#">
                           <i className="fa fa-plus"></i> Add Listing
@@ -66,7 +84,8 @@ export default function Header() {
                           isActive ? { color: "#50b498" } : {}
                         }
                       >
-                        <i className="fa fa-user"></i> <b>Login</b>
+                        <FontAwesomeIcon icon={faUserGroup} />
+                        <b>&nbsp;Login</b>
                       </NavLink>
                     </li>
                     <li>
@@ -76,7 +95,8 @@ export default function Header() {
                           isActive ? { color: "#50b498" } : {}
                         }
                       >
-                        <i className="fa fa-user-plus"></i> <b>Register</b>
+                        <FontAwesomeIcon icon={faUserPlus} />
+                        <b>&nbsp;Register</b>
                       </NavLink>
                     </li>
                     <li></li>
