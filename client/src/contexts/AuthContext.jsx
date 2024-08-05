@@ -19,6 +19,7 @@ export function AuthContextProvider(props) {
   const logout = () => {
     useEffect(() => {
       setAuthSTate(null);
+      localStorage.removeItem("accessToken");
     }, []);
   };
 
