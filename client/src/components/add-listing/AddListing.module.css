@@ -17,10 +17,10 @@
   color: #fff;
 }
 
-/* div {
+form input {
   margin-bottom: 10px;
-} */
+}
 
-form div {
+form select {
   margin-bottom: 10px;
 }
