@@ -5,6 +5,7 @@ const BASE_URL = "http://localhost:3030/data/listings";
 async function getAll() {
   const result = await request.get(BASE_URL);
   const listings = Object.values(result);
+  console.log(result);
   return listings;
 }
 

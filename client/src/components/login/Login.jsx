@@ -82,7 +82,7 @@ export default function Login() {
                               <p style={{ color: "white" }}>
                                 Don't have an account?
                                 <Link to={"http://localhost:5173/register"}>
-                                  Register here.
+                                  &nbsp;Register here.
                                 </Link>
                                 .
                               </p>

@@ -9,7 +9,6 @@ export default function Recent() {
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-            {/* "owl-carousel owl-listing */}
             <div className="">
               <div className="item">
                 <div className="row">

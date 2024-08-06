@@ -12,6 +12,7 @@ import Listings from "./components/listings/Listings";
 import ListingDetails from "./components/listings/all-listings/listing-details/ListingDetails";
 import ListingsByCategory from "./components/categories/category/ListingsByCategory";
 import Logout from "./components/logout/Logout";
+import AddListing from "./components/add-listing/AddListing";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             path="/listings/details/:listingId"
             element={<ListingDetails />}
           />
+          <Route path="/add-listing" element={<AddListing />} />
         </Routes>
         <Footer />
       </AuthContextProvider>

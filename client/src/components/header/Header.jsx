@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { AuthContext, useAuthContext } from "../../contexts/AuthContext";
+import { useAuthContext } from "../../contexts/AuthContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUserGroup,
@@ -69,9 +69,9 @@ export default function Header() {
                     </li>
                     <li>
                       <div className="main-white-button">
-                        <a href="#">
+                        <NavLink to={"add-listing"}>
                           <i className="fa fa-plus"></i> Add Listing
-                        </a>
+                        </NavLink>
                       </div>
                     </li>
                   </>
