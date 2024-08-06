@@ -1,16 +1,29 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { useRef } from "react";
 import { useGetListing } from "../../../../hooks/useListings";
 import { useScroll } from "../../../../hooks/useScroll";
 import ListingReviews from "./ListingReviews";
 
+import styles from "./ListingDetails.module.css";
+import listingsAPI from "../../../../api/listingsAPI";
+
 export default function ListingDetails() {
   const { listingId } = useParams();
+  const navigate = useNavigate();
   const [listing] = useGetListing(listingId);
 
   const scrollRef = useRef(null);
   useScroll(scrollRef);
+
+  async function listingDeleteHandler() {
+    try {
+      await listingsAPI.removeListing(listingId);
+      navigate("/");
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
 
   return (
     <>
@@ -70,6 +83,15 @@ export default function ListingDetails() {
                             />
                             {listing.email}
                           </li>
+                          <li>
+                            <button className={styles["edit-btn"]}>Edit</button>
+                            <button
+                              className={styles["delete-btn"]}
+                              onClick={listingDeleteHandler}
+                            >
+                              Delete
+                            </button>
+                          </li>
                         </ul>
                       </div>
                     </div>
@@ -80,7 +102,6 @@ export default function ListingDetails() {
           </div>
         </div>
       </div>
-
       <ListingReviews />
     </>
   );

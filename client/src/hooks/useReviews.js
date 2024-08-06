@@ -3,7 +3,6 @@ import reviewsAPI from "../api/reviewsAPI";
 
 export function useGetAllReviews(listingId) {
   const [reviews, setReviews] = useState([]);
-
   useEffect(() => {
     (async () => {
       try {

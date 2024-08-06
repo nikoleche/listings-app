@@ -20,11 +20,16 @@ function addListing(listingData) {
   return request.post(`${BASE_URL}`, listingData);
 }
 
+function removeListing(listingId) {
+  return request.remove(`${BASE_URL}/${listingId}`);
+}
+
 const listingsAPI = {
   getAll,
   getListing,
   getByCategory,
   addListing,
+  removeListing,
 };
 
 export default listingsAPI;

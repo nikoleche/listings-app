@@ -1,0 +1,35 @@
+.edit-btn {
+  background-color: #f3ba1f;
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+.edit-btn:hover {
+  background-color: #e0af27;
+}
+
+.delete-btn {
+  background-color: #d42f4a;
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+.delete-btn:hover {
+  background-color: #be1a35;
+}

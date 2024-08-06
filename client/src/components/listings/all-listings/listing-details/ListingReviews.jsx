@@ -24,12 +24,8 @@ export default function ListingReviews() {
   const { updateHandler, submitHandler, formValues } = useForm(
     initialValues,
     async ({ review }) => {
-      // try {
       const newReview = await createReview(listingId, review);
       setReviews((previousReviews) => [...previousReviews, newReview]);
-      // } catch (error) {
-      //   console.log(error.message);
-      // }
     }
   );
 
