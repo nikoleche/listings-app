@@ -17,23 +17,21 @@ const initialValues = {
 
 export default function ListingReviews() {
   const { listingId } = useParams();
-  const [reviews, setReviews] = useGetAllReviews(listingId);
   const createReview = useCreateReview();
+  const [reviews, setReviews] = useGetAllReviews(listingId);
   const { iseAuthenticated } = useAuthContext();
 
   const { updateHandler, submitHandler, formValues } = useForm(
     initialValues,
     async ({ review }) => {
-      try {
-        const newReview = await createReview(listingId, review);
-        setReviews((previousReviews) => [...previousReviews, newReview]);
-      } catch (error) {
-        console.log(error.message);
-      }
+      // try {
+      const newReview = await createReview(listingId, review);
+      setReviews((previousReviews) => [...previousReviews, newReview]);
+      // } catch (error) {
+      //   console.log(error.message);
+      // }
     }
   );
-
-  console.log(reviews);
 
   return (
     <div className="recent-listing">
@@ -51,7 +49,7 @@ export default function ListingReviews() {
                     {reviews.map((review) => (
                       <li key={review._id}>
                         <p>
-                          {review.author.email}: {review.text}
+                          {review.author?.email}: {review.text}
                         </p>
                       </li>
                     ))}

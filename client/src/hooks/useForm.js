@@ -12,8 +12,8 @@ export function useForm(initialValues, submitCallback) {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    setFormValues(initialValues);
     submitCallback(formValues);
+    setFormValues(initialValues);
   };
   return { formValues, updateHandler, submitHandler };
 }
