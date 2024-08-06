@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { useScroll } from "../../hooks/useScroll";
+import { Link } from "react-router-dom";
 
 export default function MainBanner() {
   const scrollRef = useRef(null);
@@ -26,61 +27,22 @@ export default function MainBanner() {
                 <div className="col-lg-1 align-self-center">
                   <fieldset>
                     <i className="fa fa-search"></i>
-                    {/* <select
-                      name="area"
-                      className="form-select"
-                      aria-label="Area"
-                      id="chooseCategory"
-                      onChange="this.form.click()"
-                    >
-                      <option value="all">All Categories</option>
-                      <option value="For Rent">Houses</option>
-                      <option value="Sightseeing">Apartments</option>
-                      <option value="Entertainment">Offices</option>
-                      <option value="Sightseeing">Venues</option>
-                      <option value="Shopping">Storage Units</option>
-                    </select> */}
                   </fieldset>
                 </div>
-                {/* TODO updated columns and removed price search, removed borders by removing class "searchText"*/}
                 <div className="col-lg-8 align-self-center">
                   <fieldset>
                     <input
                       type="address"
                       name="address"
-                      // className="searchText"
                       placeholder="Search all active listings&hellip;"
                       autoComplete="on"
                       required
                     />
                   </fieldset>
                 </div>
-                {/* TODO REMOVED PRICE SEARCH */}
-                {/* <div className="col-lg-3 align-self-center">
-                  <fieldset>
-                    <select
-                      name="price"
-                      className="form-select"
-                      aria-label="Default select example"
-                      id="chooseCategory"
-                      onChange="this.form.click()"
-
-                      // onChange={this.form.click}
-                    >
-                      <option value="select">Price Range</option>
-                      <option value="$100 - $250">$100 - $250</option>
-                      <option value="$250 - $500">$250 - $500</option>
-                      <option value="$500 - $1000">$500 - $1,000</option>
-                      <option value="$1000+">$1,000 or more</option>
-                    </select>
-                  </fieldset>
-                </div> */}
                 <div className="col-lg-3">
                   <fieldset>
-                    <button>
-                      {/* <i className="fa fa-search"></i> SEARCH */}
-                      SEARCH
-                    </button>
+                    <button>SEARCH</button>
                   </fieldset>
                 </div>
               </div>
@@ -89,7 +51,7 @@ export default function MainBanner() {
           <div className="col-lg-10 offset-lg-1">
             <ul className="categories">
               <li>
-                <a href="listing.html">
+                <Link to={"category/restaurants"}>
                   <span className="icon">
                     <img
                       src="assets/images/search-icon-restaurants.png"
@@ -97,10 +59,10 @@ export default function MainBanner() {
                     />
                   </span>
                   <b>Restaurants</b>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#">
+                <Link to={"category/nightlife"}>
                   <span className="icon">
                     <img
                       src="assets/images/search-icon-nightlife.png"
@@ -108,10 +70,10 @@ export default function MainBanner() {
                     />
                   </span>
                   <b>Nightlife</b>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#">
+                <Link to={"category/shops"}>
                   <span className="icon">
                     <img
                       src="assets/images/search-icon-shops.png"
@@ -119,10 +81,10 @@ export default function MainBanner() {
                     />
                   </span>
                   <b>Shops</b>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="category.html">
+                <Link to={"category/museums"}>
                   <span className="icon">
                     <img
                       src="assets/images/search-icon-museums.png"
@@ -130,10 +92,10 @@ export default function MainBanner() {
                     />
                   </span>
                   <b>Museums</b>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#">
+                <Link to={"category/activities"}>
                   <span className="icon">
                     <img
                       src="assets/images/search-icon-activities.png"
@@ -141,7 +103,7 @@ export default function MainBanner() {
                     />
                   </span>
                   <b>Activities</b>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
