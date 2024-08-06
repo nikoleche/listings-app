@@ -6,7 +6,10 @@ export default function Footer() {
           <div className="col-lg-4">
             <div className="about">
               <div className="logo">
-                <img src="assets/images/sample-logo.png" alt="NYC Listings" />
+                <img
+                  src="http://localhost:5173/public/assets/images/sample-logo.png"
+                  alt="NYC Listings"
+                />
               </div>
               <p></p>
             </div>
