@@ -1,6 +1,8 @@
 import { useRef } from "react";
 import { useScroll } from "../../hooks/useScroll";
 
+import styles from "./AddListing.module.css";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
 
@@ -15,7 +17,7 @@ export default function AddListing() {
             <div className="col-lg-12">
               <div className="top-text header-text">
                 {/* top-text header-text */}
-                <h2>Upload your own listings here</h2>
+                <h2>Add your own listings here</h2>
               </div>
             </div>
           </div>
@@ -105,6 +107,12 @@ export default function AddListing() {
                         id="description"
                         rows="3"
                       ></textarea>
+                    </div>
+                    <div>
+                      <br></br>
+                      <button type="submit" className={styles["submit-btn"]}>
+                        Submit
+                      </button>
                     </div>
                   </form>
                 </div>
