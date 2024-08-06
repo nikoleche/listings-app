@@ -5,24 +5,26 @@ const BASE_URL = "http://localhost:3030/data/listings";
 async function getAll() {
   const result = await request.get(BASE_URL);
   const listings = Object.values(result);
-  console.log(result);
   return listings;
 }
 
-async function getListing(listingId) {
-  return await request.get(`${BASE_URL}/${listingId}`);
+function getListing(listingId) {
+  return request.get(`${BASE_URL}/${listingId}`);
 }
 
-async function getByCategory(categoryId) {
-  return await request.get(
-    `${BASE_URL}?where=category%20IN%20(%22${categoryId}%22)`
-  );
+function getByCategory(categoryId) {
+  return request.get(`${BASE_URL}?where=category%20IN%20(%22${categoryId}%22)`);
+}
+
+function addListing(listingData) {
+  return request.post(`${BASE_URL}`, listingData);
 }
 
 const listingsAPI = {
   getAll,
   getListing,
   getByCategory,
+  addListing,
 };
 
 export default listingsAPI;

@@ -1,26 +1,18 @@
-.submit-btn {
+.fav-btn {
   background-color: #50b498;
   border: none;
   color: #fff;
-  padding: 16px 32px;
+  padding: 8px 16px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 7px;
 }
 
-.submit-btn:hover {
+.fav-btn:hover {
   background-color: #2e927b;
   color: #fff;
-}
-
-/* div {
-  margin-bottom: 10px;
-} */
-
-form div {
-  margin-bottom: 10px;
 }

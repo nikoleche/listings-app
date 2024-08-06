@@ -36,3 +36,10 @@ export function useGetListingsByCategory(categoryId) {
   }, [categoryId]);
   return [listings];
 }
+
+export function useAddListing() {
+  function addListingHandler(listingData) {
+    listingsAPI.addListing(listingData);
+  }
+  return addListingHandler;
+}

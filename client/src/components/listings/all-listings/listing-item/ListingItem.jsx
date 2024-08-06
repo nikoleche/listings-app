@@ -1,7 +1,13 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+
+import styles from "./ListingItem.module.css";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHeart,
+  faCircleInfo,
+  faThumbsUp,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function ListingItem(props) {
   let categoryURL = "";
@@ -44,11 +50,9 @@ export default function ListingItem(props) {
           <br></br>
           <div className="left-content align-self-center">
             <ul className="rate">
-              <li>
-                <a href="contact.html">
-                  <FontAwesomeIcon icon={faHeart} /> Add to favorites
-                </a>
-              </li>
+              <button className={styles["fav-btn"]}>
+                <FontAwesomeIcon icon={faHeart} />
+              </button>
             </ul>
             <ul className="info">
               <li>

@@ -5,10 +5,43 @@ import styles from "./AddListing.module.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
+import { useAddListing } from "../../hooks/useListings";
+import { useForm } from "../../hooks/useForm";
+
+const initialValues = {
+  title: "",
+  category: "",
+  location: "",
+  price: "",
+  imageURL: "",
+  phoneNumber: "",
+  email: "",
+  summary: "",
+};
 
 export default function AddListing() {
   const scrollRef = useRef(null);
   useScroll(scrollRef);
+
+  const navigate = useNavigate();
+  const addListing = useAddListing();
+
+  async function addHandler(formValues) {
+    try {
+      await addListing(formValues);
+      navigate("/listings");
+    } catch (error) {
+      // VALIDATION
+      console.log(error.message);
+    }
+  }
+
+  const { formValues, updateHandler, submitHandler } = useForm(
+    initialValues,
+    addHandler
+  );
+
   return (
     <>
       <div className="page-heading">
@@ -30,29 +63,41 @@ export default function AddListing() {
             <div className="col-lg-6">
               <div className="item">
                 <div className="row">
-                  <form id="add-listing">
+                  <form id="add-listing" onSubmit={submitHandler}>
                     <h2>
                       Upload a listing to our directory&nbsp;
                       <FontAwesomeIcon icon={faCloudArrowUp} />
                     </h2>
                     <br></br>
-                    <div className="form-group">
+                    <div className="form-group form-div">
                       <label htmlFor="title">Title:</label>
                       <input
                         type="text"
                         className="form-control"
                         id="title"
+                        name="title"
                         placeholder=""
+                        required
+                        value={formValues.title}
+                        onChange={updateHandler}
                       />
                     </div>
                     <div className="form-group">
                       <label htmlFor="category">Select a category:</label>
-                      <select className="form-control" id="category">
-                        <option>Restaurants</option>
-                        <option>Nightlife</option>
-                        <option>Shops</option>
-                        <option>Museums</option>
-                        <option>Activities</option>
+                      <select
+                        className="form-control"
+                        id="category"
+                        name="category"
+                        required
+                        value={formValues.category}
+                        onChange={updateHandler}
+                      >
+                        <option>---</option>
+                        <option value="restaurants">Restaurants</option>
+                        <option value="nightlife">Nightlife</option>
+                        <option value="shops">Shops</option>
+                        <option value="museums">Museums</option>
+                        <option value="activities">Activities</option>
                       </select>
                     </div>
                     <div className="form-group">
@@ -61,7 +106,11 @@ export default function AddListing() {
                         type="text"
                         className="form-control"
                         id="location"
+                        name="location"
                         placeholder=""
+                        required
+                        value={formValues.location}
+                        onChange={updateHandler}
                       />
                     </div>
                     <div className="form-group">
@@ -70,25 +119,37 @@ export default function AddListing() {
                         type="number"
                         className="form-control"
                         id="price"
+                        name="price"
                         placeholder=""
+                        required
+                        value={formValues.price}
+                        onChange={updateHandler}
                       />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="imageUrl">Image URL:</label>
+                      <label htmlFor="imageURL">Image URL:</label>
                       <input
                         type="text"
                         className="form-control"
-                        id="imageUrl"
+                        id="imageURL"
+                        name="imageURL"
                         placeholder="https://"
+                        required
+                        value={formValues.imageURL}
+                        onChange={updateHandler}
                       />
                     </div>
                     <div className="form-group">
                       <label htmlFor="phoneNumber">Phone number:</label>
                       <input
-                        type="phoneNumber"
+                        type="number"
                         className="form-control"
                         id="phoneNumber"
+                        name="phoneNumber"
                         placeholder=""
+                        required
+                        value={formValues.phoneNumber}
+                        onChange={updateHandler}
                       />
                     </div>
                     <div className="form-group">
@@ -97,15 +158,23 @@ export default function AddListing() {
                         type="email"
                         className="form-control"
                         id="email"
-                        placeholder="user@gmail.com"
+                        name="email"
+                        placeholder=""
+                        required
+                        onChange={updateHandler}
                       />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="description">Description:</label>
+                      <label htmlFor="summary">Summary:</label>
                       <textarea
                         className="form-control"
-                        id="description"
+                        id="summary"
+                        name="summary"
                         rows="3"
+                        placeholder=""
+                        required
+                        value={formValues.summary}
+                        onChange={updateHandler}
                       ></textarea>
                     </div>
                     <div>

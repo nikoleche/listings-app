@@ -2,6 +2,7 @@ import { useState } from "react";
 
 export function useForm(initialValues, submitCallback) {
   const [formValues, setFormValues] = useState(initialValues);
+  console.log(formValues);
 
   const updateHandler = (event) => {
     setFormValues((state) => ({

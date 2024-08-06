@@ -40,7 +40,7 @@ export default function ListingDetails() {
                   <div className="col-lg-6">
                     <div className="right-content align-self-top">
                       <h4>{listing.title}</h4>
-                      <p>{listing.description}</p>
+                      <p>{listing.summary}</p>
                       <br></br>
                       <div className="left-content align-self-center">
                         <ul className="info">
@@ -70,7 +70,7 @@ export default function ListingDetails() {
                               src="http://localhost:5173/assets/images/listing-icon-telephone.png"
                               alt="Location"
                             />
-                            {listing.telephone}
+                            {listing.phoneNumber}
                           </li>
                           <li>
                             <img
