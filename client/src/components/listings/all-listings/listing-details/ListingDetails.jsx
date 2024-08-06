@@ -1,15 +1,13 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { useRef } from "react";
 import { useGetListing } from "../../../../hooks/useListings";
 import { useScroll } from "../../../../hooks/useScroll";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import ListingReviews from "./ListingReviews";
 
 export default function ListingDetails() {
   const { listingId } = useParams();
-  const [listing, setListing] = useGetListing(listingId);
+  const [listing] = useGetListing(listingId);
 
   const scrollRef = useRef(null);
   useScroll(scrollRef);
@@ -44,13 +42,6 @@ export default function ListingDetails() {
                       <br></br>
                       <div className="left-content align-self-center">
                         <ul className="info">
-                          <li>
-                            <div className="main-white-button">
-                              <Link to={`/listings/details`}>
-                                <FontAwesomeIcon icon={faHeart} />
-                              </Link>
-                            </div>
-                          </li>
                           <li>
                             <img
                               src="http://localhost:5173/assets/images/listing-icon-dollar.png"
@@ -89,30 +80,8 @@ export default function ListingDetails() {
           </div>
         </div>
       </div>
+
+      <ListingReviews />
     </>
   );
-}
-
-{
-  {
-    /* <div className="col-lg-3">
-                  <div className="text-icon">
-                    <h4>
-                      <img
-                        src="assets/images/listing-icon-heading.png"
-                        alt=""
-                      />
-                      Total Listings
-                    </h4>
-                  </div>
-                  <span className="list-item">
-                    This Week: 200 Listings &amp; 150 Sales
-                    <br />
-                    This Month: 1,800 Listings &amp; 1,560 Sales
-                    <br />
-                    This Year: 16,000 Listings &amp; 14,000 Sales
-                  </span>
-                </div>
-              </div> */
-  }
 }

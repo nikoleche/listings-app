@@ -42,7 +42,6 @@ export default function Login() {
                 <div className="row">
                   <div className="col-lg-12">
                     <div>
-                      {/* removed class inner-content */}
                       <div className="row justify-content-center">
                         <div className="col-lg-12 align-self-center">
                           <form id="contact" onSubmit={submitHandler}>

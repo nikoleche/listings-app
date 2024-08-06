@@ -3,11 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./ListingItem.module.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHeart,
-  faCircleInfo,
-  faThumbsUp,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCircleInfo, faComments } from "@fortawesome/free-solid-svg-icons";
 
 export default function ListingItem(props) {
   let categoryURL = "";
@@ -51,7 +47,7 @@ export default function ListingItem(props) {
           <div className="left-content align-self-center">
             <ul className="rate">
               <button className={styles["fav-btn"]}>
-                <FontAwesomeIcon icon={faHeart} />
+                Reviews <FontAwesomeIcon icon={faComments} />
               </button>
             </ul>
             <ul className="info">

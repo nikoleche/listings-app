@@ -69,7 +69,10 @@ export default function AddListing() {
                       <FontAwesomeIcon icon={faCloudArrowUp} />
                     </h2>
                     <br></br>
-                    <div className="form-group form-div">
+                    <div
+                      className="form-group"
+                      style={{ marginBottom: "10px" }}
+                    >
                       <label htmlFor="title">Title:</label>
                       <input
                         type="text"
@@ -82,7 +85,10 @@ export default function AddListing() {
                         onChange={updateHandler}
                       />
                     </div>
-                    <div className="form-group">
+                    <div
+                      className="form-group"
+                      style={{ marginBottom: "10px" }}
+                    >
                       <label htmlFor="category">Select a category:</label>
                       <select
                         className="form-control"
@@ -100,7 +106,10 @@ export default function AddListing() {
                         <option value="activities">Activities</option>
                       </select>
                     </div>
-                    <div className="form-group">
+                    <div
+                      className="form-group"
+                      style={{ marginBottom: "10px" }}
+                    >
                       <label htmlFor="location">Location:</label>
                       <input
                         type="text"
@@ -113,7 +122,10 @@ export default function AddListing() {
                         onChange={updateHandler}
                       />
                     </div>
-                    <div className="form-group">
+                    <div
+                      className="form-group"
+                      style={{ marginBottom: "10px" }}
+                    >
                       <label htmlFor="price">Price per person:</label>
                       <input
                         type="number"
@@ -126,7 +138,10 @@ export default function AddListing() {
                         onChange={updateHandler}
                       />
                     </div>
-                    <div className="form-group">
+                    <div
+                      className="form-group"
+                      style={{ marginBottom: "10px" }}
+                    >
                       <label htmlFor="imageURL">Image URL:</label>
                       <input
                         type="text"
@@ -139,7 +154,10 @@ export default function AddListing() {
                         onChange={updateHandler}
                       />
                     </div>
-                    <div className="form-group">
+                    <div
+                      className="form-group"
+                      style={{ marginBottom: "10px" }}
+                    >
                       <label htmlFor="phoneNumber">Phone number:</label>
                       <input
                         type="number"
@@ -152,7 +170,10 @@ export default function AddListing() {
                         onChange={updateHandler}
                       />
                     </div>
-                    <div className="form-group">
+                    <div
+                      className="form-group"
+                      style={{ marginBottom: "10px" }}
+                    >
                       <label htmlFor="price">Email address:</label>
                       <input
                         type="email"
@@ -164,7 +185,10 @@ export default function AddListing() {
                         onChange={updateHandler}
                       />
                     </div>
-                    <div className="form-group">
+                    <div
+                      className="form-group"
+                      style={{ marginBottom: "10px" }}
+                    >
                       <label htmlFor="summary">Summary:</label>
                       <textarea
                         className="form-control"
