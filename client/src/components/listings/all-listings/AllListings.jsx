@@ -16,6 +16,9 @@ export default function Recent() {
                   {listings.map((listing) => (
                     <ListingItem key={listing._id} {...listing} />
                   ))}
+                  {listings.length === 0 && (
+                    <p className="lead">There are no listings yet.</p>
+                  )}
                 </div>
               </div>
             </div>

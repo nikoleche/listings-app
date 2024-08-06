@@ -22,6 +22,11 @@ export default function ListingsByCategory() {
                   {listings.map((listing) => (
                     <ListingItem key={listing._id} {...listing} />
                   ))}
+                  {listings.length === 0 && (
+                    <p className="lead">
+                      There are no listings from this category yet.
+                    </p>
+                  )}
                 </div>
               </div>
             </div>
