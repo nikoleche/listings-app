@@ -14,6 +14,7 @@ import ListingsByCategory from "./components/categories/category/ListingsByCateg
 import Logout from "./components/logout/Logout";
 import AddListing from "./components/add-listing/AddListing";
 import EditListing from "./components/edit-listing/EditListing";
+import RouteGuard from "./components/common/RouteGuard";
 
 function App() {
   return (
@@ -29,14 +30,16 @@ function App() {
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/logout" element={<Logout />} />
           <Route path="/listings" element={<Listings />} />
           <Route
             path="/listings/details/:listingId"
             element={<ListingDetails />}
           />
-          <Route path="/listings/edit/:listingId" element={<EditListing />} />
-          <Route path="/add-listing" element={<AddListing />} />
+          <Route element={<RouteGuard />}>
+            <Route path="/add-listing" element={<AddListing />} />
+            <Route path="/listings/edit/:listingId" element={<EditListing />} />
+            <Route path="/logout" element={<Logout />} />
+          </Route>
         </Routes>
         <Footer />
       </AuthContextProvider>
