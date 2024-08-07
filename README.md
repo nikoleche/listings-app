@@ -114,3 +114,5 @@ Existing users logout.
 ```
 
 ### End of documentation
+
+Thank you for reading my documentation
