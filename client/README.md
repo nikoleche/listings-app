@@ -1,8 +1,14 @@
-# React + Vite
+# NYC Listings Documentation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Navigation
 
-Currently, two official plugins are available:
+1. [Introduction](#introduction)
+2. [Initial Setup](#initial-setup)
+3. [Pages](#pages)
+4. [APIs](#apis)
+5. [Usage](#usage)
+6. [Other](#other)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Introduction
+
+"NYC Listings" is a project designed for learning purposes. The application utilizes a modern tech stack including React, React-Bootstrap, React-DOM, and React-Router for a responsive user experience. It supports all CRUD operations. The backend operations are currently handled by SoftUni's server.
