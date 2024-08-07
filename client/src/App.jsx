@@ -16,6 +16,7 @@ import AddListing from "./components/add-listing/AddListing";
 import EditListing from "./components/edit-listing/EditListing";
 import RouteGuard from "./components/common/RouteGuard";
 import AuthGuard from "./components/common/AuthGuard";
+import NotFound from "./components/not-found/NotFound";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
             <Route path="/listings/edit/:listingId" element={<EditListing />} />
             <Route path="/logout" element={<Logout />} />
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </AuthContextProvider>

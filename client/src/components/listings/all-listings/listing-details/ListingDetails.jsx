@@ -99,9 +99,9 @@ export default function ListingDetails() {
                           {isOwner && (
                             <li>
                               <Link to={`/listings/edit/${listingId}`}>
-                                <button className={styles["edit-btn"]}>
+                                <Button className={styles["edit-btn"]}>
                                   Edit
-                                </button>
+                                </Button>
                                 {/* Delete modal */}
                               </Link>
                               <Button
