@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useMemo, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import { useScroll } from "../../hooks/useScroll";
@@ -26,9 +26,13 @@ export default function EditListing() {
   const navigate = useNavigate();
   const { listingId } = useParams();
   const [listing] = useGetListing(listingId);
+  const initialFormValues = useMemo(
+    () => Object.assign({}, initialValues, listing),
+    [listing]
+  );
 
   const { formValues, updateHandler, submitHandler } = useForm(
-    Object.assign(initialValues, listing),
+    initialFormValues,
     async (formValues) => {
       await listingsAPI.updateListing(listingId, formValues);
       navigate(`/listings/details/${listingId}`);
