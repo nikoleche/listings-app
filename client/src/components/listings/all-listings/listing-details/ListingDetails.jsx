@@ -7,11 +7,15 @@ import ListingReviews from "./ListingReviews";
 
 import styles from "./ListingDetails.module.css";
 import listingsAPI from "../../../../api/listingsAPI";
+import { useAuthContext } from "../../../../contexts/AuthContext";
 
 export default function ListingDetails() {
   const { listingId } = useParams();
   const navigate = useNavigate();
   const [listing] = useGetListing(listingId);
+  const { userId } = useAuthContext();
+
+  const isOwner = userId === listing._ownerId;
 
   const scrollRef = useRef(null);
   useScroll(scrollRef);
@@ -88,19 +92,21 @@ export default function ListingDetails() {
                             />
                             {listing.email}
                           </li>
-                          <li>
-                            <Link to={`/listings/edit/${listingId}`}>
-                              <button className={styles["edit-btn"]}>
-                                Edit
+                          {isOwner && (
+                            <li>
+                              <Link to={`/listings/edit/${listingId}`}>
+                                <button className={styles["edit-btn"]}>
+                                  Edit
+                                </button>
+                              </Link>
+                              <button
+                                className={styles["delete-btn"]}
+                                onClick={listingDeleteHandler}
+                              >
+                                Delete
                               </button>
-                            </Link>
-                            <button
-                              className={styles["delete-btn"]}
-                              onClick={listingDeleteHandler}
-                            >
-                              Delete
-                            </button>
-                          </li>
+                            </li>
+                          )}
                         </ul>
                       </div>
                     </div>
