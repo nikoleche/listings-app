@@ -6,11 +6,6 @@ export default function Browse() {
     <div className="popular-categories">
       <div className="container">
         <div className="row">
-          {/* <div className="col-lg-12"> */}
-          {/* <div className="section-heading">
-              <h2>Browse Categories</h2>
-            </div> */}
-          {/* </div> */}
           <div className="col-lg-12">
             <div className="naccs">
               <div className="grid">
@@ -72,7 +67,7 @@ export default function Browse() {
                           title="Shops"
                           text="This category includes everything from high-end boutiques and department stores to unique local shops and specialty stores. City shops offer a wide array of products, such as fashion, electronics, home goods, and artisanal items."
                           category="shops"
-                          imageURL="http://localhost:5173/assets/images/tabs-image-01.jpg"
+                          imageURL="http://localhost:5173/assets/images/browse-shops.jpg"
                         />
                       </li>
                       <li>
@@ -80,7 +75,7 @@ export default function Browse() {
                           title="Museums"
                           text="Museums in the city offer a rich cultural and educational experience through diverse collections and exhibitions. This category includes art museums showcasing classic and modern works, history museums presenting artifacts and stories from the past, science museums, and specialized institutions focusing on specific topics such as natural history or technology."
                           category="museums"
-                          imageURL="http://localhost:5173/assets/images/tabs-image-05.jpg"
+                          imageURL="http://localhost:5173/assets/images/browse-museums.jpg"
                         />
                       </li>
                       <li>
@@ -88,7 +83,7 @@ export default function Browse() {
                           title="Activities"
                           text="Whether you're interested in sports, arts, or simply exploring the city's vibrant neighborhoods, the range of activities provides diverse opportunities for entertainment, relaxation, and discovery."
                           category="activities"
-                          imageURL="http://localhost:5173/assets/images/tabs-image-02.jpg"
+                          imageURL="http://localhost:5173/assets/images/browse-activities.jpg"
                         />
                       </li>
                     </ul>
