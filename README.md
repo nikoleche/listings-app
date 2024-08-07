@@ -30,7 +30,7 @@ node server.js
 
 The application will then be accessible at https://localhost:5173
 
-## Routes Summary
+## Routes
 
 ### <u>Guest and registered users:</u>
 
@@ -81,7 +81,7 @@ The NYC Listings application communicates with Softuni's server to handle backen
 
 ### <ul>API Endpoints</ul>
 
-CRUD operations:
+CRUD operations related to listings:
 
 ```
 /data/listings
