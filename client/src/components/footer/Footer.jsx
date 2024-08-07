@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <footer>
@@ -14,30 +16,47 @@ export default function Footer() {
               <p></p>
             </div>
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-6">
             <div className="helpful-links">
-              <h4>Helpful Links</h4>
+              <h4 style={{ color: "#50b498" }}>Helpful links</h4>
               <div className="row">
-                <div className="col-lg-6 col-sm-6">
+                <div className="col-lg-9">
                   <ul>
-                    <li>
+                    <li style={{ display: "inline-block", padding: "10px" }}>
+                      <Link to={"/"}>Home</Link>
+                    </li>
+                    <li style={{ display: "inline-block", padding: "10px" }}>
+                      <Link to={"/categories"}>Categories</Link>
+                    </li>
+                    <li style={{ display: "inline-block", padding: "10px" }}>
+                      <Link to={"/listings"}>Listings</Link>
+                    </li>
+                    <li style={{ display: "inline-block", padding: "10px" }}>
+                      <Link to={"/login"}>Login</Link>
+                    </li>
+                    <li style={{ display: "inline-block", padding: "10px" }}>
+                      <Link to={"/register"}>Register</Link>
+                    </li>
+                  </ul>
+                  {/* <ul>
+                    <li style={{ display: "inline-block" }}>
+                      <a href="#">Home</a>
+                    </li>
+                    <li style={{ display: "inline-block" }}>
                       <a href="#">Categories</a>
                     </li>
                     <li>
-                      <a href="#">Reviews</a>
+                      <a href="#">Listings</a>
                     </li>
                     <li>
-                      <a href="#">Listing</a>
-                    </li>
-                    <li>
-                      <a href="#">Contact Us</a>
+                      <a href="#">Login</a>
                     </li>
                   </ul>
                 </div>
                 <div className="col-lg-6">
                   <ul>
                     <li>
-                      <a href="#">About Us</a>
+                      <a href="#">Register</a>
                     </li>
                     <li>
                       <a href="#">Awards</a>
@@ -48,12 +67,12 @@ export default function Footer() {
                     <li>
                       <a href="#">Privacy Policy</a>
                     </li>
-                  </ul>
+                  </ul> */}
                 </div>
               </div>
             </div>
           </div>
-          <div className="col-lg-4">
+          {/* <div className="col-lg-4">
             <div className="contact-us">
               <h4>Contact Us</h4>
               <p>27th Street of New Town, Digital Villa</p>
@@ -66,10 +85,10 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="col-lg-12">
             <div className="sub-footer">
-              <p>Copyright © All Rights Reserved. </p>
+              <p>Copyright NYC Listings © All Rights Reserved. </p>
             </div>
           </div>
         </div>

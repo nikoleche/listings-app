@@ -20,7 +20,7 @@ export default function MyListings() {
           <div className="row">
             <div className="col-lg-12">
               <div className="top-text header-text">
-                <h2>All of your listings</h2>
+                <h2>My listings</h2>
               </div>
             </div>
           </div>

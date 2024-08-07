@@ -21,6 +21,10 @@ export default function MainBanner() {
     return [result];
   }
 
+  function searchScroll() {
+    const searchScroll = useScroll(scrollRef);
+  }
+
   const { formValues, updateHandler, submitHandler } = useForm(
     initialValues,
     searchHandler
@@ -53,6 +57,7 @@ export default function MainBanner() {
                         required
                         value={formValues.searchQuery}
                         onChange={updateHandler}
+                        onClick={searchScroll}
                       />
                     </fieldset>
                   </div>

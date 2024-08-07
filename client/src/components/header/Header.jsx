@@ -79,7 +79,7 @@ export default function Header() {
                     </li>
                     <li>
                       <div className="main-white-button">
-                        <NavLink to={"add-listing"}>
+                        <NavLink to={"/add-listing"}>
                           <i className="fa fa-plus"></i> Add Listing
                         </NavLink>
                       </div>

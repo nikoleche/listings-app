@@ -1222,7 +1222,6 @@ footer {
 footer h4 {
   font-size: 20px;
   font-weight: 700;
-  color: #8d99af;
   margin-bottom: 30px;
 }
 
@@ -1251,21 +1250,12 @@ footer .helpful-links ul li a {
 }
 
 footer .helpful-links ul li a:hover {
-  color: #8d99af;
-  border-bottom: 1px solid #8d99af;
+  color: #2e927b;
+  border-bottom: 1px solid #2e927b;
 }
 
 footer .contact-us p {
   margin-bottom: 25px;
-}
-
-footer .contact-us a {
-  transition: all 0.3s;
-}
-
-footer .contact-us a:hover {
-  color: #8d99af;
-  border-bottom: 1px solid #8d99af;
 }
 
 footer .sub-footer {
