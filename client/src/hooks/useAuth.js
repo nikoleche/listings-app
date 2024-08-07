@@ -17,6 +17,9 @@ export function useRegister() {
 
   async function registerHandler(email, password) {
     const { password: _, ...authData } = await register(email, password);
+    localStorage.setItem("accessToken", authData.accessToken);
+    console.log(authData);
+
     updateAuthState(authData);
   }
   return registerHandler;
