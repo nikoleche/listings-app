@@ -1,10 +1,9 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
 
-export default function RouteGuard() {
+export default function AuthGuard() {
   const { isAuthenticated } = useAuthContext();
+  console.log(isAuthenticated);
 
-  return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
+  return isAuthenticated ? <Navigate to="/" /> : <Outlet />;
 }
-
-// not working as storage isn't persistent at the moment
