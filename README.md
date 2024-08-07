@@ -32,7 +32,7 @@ The application will then be accessible at https://localhost:5173
 
 > NOTE: This application does not support persistent storage yet. In case of a server restart, please run localStorage.clear() in the browser.
 
-## Routes Summary
+## Routes
 
 ### <u>Guest and registered users:</u>
 
