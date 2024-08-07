@@ -30,6 +30,10 @@
   border-radius: 7px;
 }
 
+.delete-btn:focus {
+  background-color: #d42f4a;
+}
+
 .delete-btn:hover {
   background-color: #be1a35;
 }

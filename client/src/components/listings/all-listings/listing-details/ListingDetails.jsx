@@ -115,7 +115,7 @@ export default function ListingDetails() {
                                   <Modal.Title>Deletion </Modal.Title>
                                 </Modal.Header>
                                 <Modal.Body>
-                                  Woohoo, you are reading this text in a modal!
+                                  Delete listing "{listing.title}"?
                                 </Modal.Body>
                                 <Modal.Footer>
                                   <Button

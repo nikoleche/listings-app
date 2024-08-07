@@ -49,6 +49,11 @@ export default function ListingReviews() {
                         </p>
                       </li>
                     ))}
+                    {reviews.length === 0 && (
+                      <p className="lead">
+                        There are no reviews for this listing yet.
+                      </p>
+                    )}
                   </ul>
                 </div>
                 {isAuthenticated && (
