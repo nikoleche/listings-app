@@ -37,6 +37,17 @@ export function useGetListingsByCategory(categoryId) {
   return [listings];
 }
 
+// export function useSearchListings(searchQuery) {
+//   const [foundListings, setFoundListings] = useState([]);
+//   useEffect(() => {
+//     (async () => {
+//       const result = await listingsAPI.getBySearch(searchQuery);
+//       setFoundListings(result);
+//     })();
+//   }, [searchQuery]);
+//   return [foundListings];
+// }
+
 export function useAddListing() {
   function addListingHandler(listingData) {
     listingsAPI.addListing(listingData);

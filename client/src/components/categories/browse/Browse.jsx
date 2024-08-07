@@ -99,7 +99,6 @@ export default function Browse() {
           </div>
         </div>
       </div>
-      {/* <Recent /> */}
     </div>
   );
 }

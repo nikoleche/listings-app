@@ -83,7 +83,7 @@ export default function ListingReviews() {
                                 type="submit"
                                 className={styles["review-btn"]}
                               >
-                                Submit&nbsp;
+                                Submit review&nbsp;
                                 <FontAwesomeIcon icon={faComments} />
                               </button>
                             </div>

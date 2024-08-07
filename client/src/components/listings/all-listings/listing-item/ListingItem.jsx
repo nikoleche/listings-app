@@ -45,11 +45,6 @@ export default function ListingItem(props) {
           <h4>{props.title}</h4>
           <br></br>
           <div className="left-content align-self-center">
-            <ul className="rate">
-              <button className={styles["fav-btn"]}>
-                Reviews <FontAwesomeIcon icon={faComments} />
-              </button>
-            </ul>
             <ul className="info">
               <li>
                 <img

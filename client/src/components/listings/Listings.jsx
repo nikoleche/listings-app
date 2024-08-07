@@ -12,7 +12,6 @@ export default function Listings() {
           <div className="row">
             <div className="col-lg-12">
               <div className="top-text header-text">
-                {/* top-text header-text */}
                 <h2>Browse through all available listings, unsorted</h2>
               </div>
             </div>

@@ -26,7 +26,7 @@ function App() {
 
         <Header />
         <Routes>
-          <Route path="/" element={<MainBanner />} />
+          <Route path="/" element={<MainBanner />}></Route>/>
           <Route path="/category/*" element={<Categories />}>
             <Route path=":categoryId" element={<ListingsByCategory />} />
           </Route>

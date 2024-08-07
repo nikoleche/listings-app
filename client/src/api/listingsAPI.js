@@ -16,6 +16,10 @@ function getByCategory(categoryId) {
   return request.get(`${BASE_URL}?where=category%20IN%20(%22${categoryId}%22)`);
 }
 
+function getBySearch(searchQuery) {
+  return request.get(`${BASE_URL}?where=title%20LIKE%20%22${searchQuery}%22`);
+}
+
 function addListing(listingData) {
   return request.post(`${BASE_URL}`, listingData);
 }
@@ -32,6 +36,7 @@ const listingsAPI = {
   getAll,
   getListing,
   getByCategory,
+  getBySearch,
   addListing,
   removeListing,
   updateListing,
