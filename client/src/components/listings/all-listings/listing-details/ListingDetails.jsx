@@ -1,13 +1,17 @@
+import { useState, useRef } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
-import { useRef } from "react";
 import { useGetListing } from "../../../../hooks/useListings";
 import { useScroll } from "../../../../hooks/useScroll";
+
+import listingsAPI from "../../../../api/listingsAPI";
+import { useAuthContext } from "../../../../contexts/AuthContext";
+
 import ListingReviews from "./ListingReviews";
 
 import styles from "./ListingDetails.module.css";
-import listingsAPI from "../../../../api/listingsAPI";
-import { useAuthContext } from "../../../../contexts/AuthContext";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 
 export default function ListingDetails() {
   const { listingId } = useParams();
@@ -20,12 +24,12 @@ export default function ListingDetails() {
   const scrollRef = useRef(null);
   useScroll(scrollRef);
 
-  async function listingDeleteHandler() {
-    const approveDelete = confirm(`Delete listing "${listing.title}"?`);
-    if (!approveDelete) {
-      return;
-    }
+  const [displayModal, setdisplayModal] = useState(false);
 
+  const handleClose = () => setdisplayModal(false);
+  const handleShow = () => setdisplayModal(true);
+
+  async function listingDeleteHandler() {
     try {
       await listingsAPI.removeListing(listingId);
       navigate("/");
@@ -98,13 +102,36 @@ export default function ListingDetails() {
                                 <button className={styles["edit-btn"]}>
                                   Edit
                                 </button>
+                                {/* Delete modal */}
                               </Link>
-                              <button
+                              <Button
                                 className={styles["delete-btn"]}
-                                onClick={listingDeleteHandler}
+                                onClick={handleShow}
                               >
                                 Delete
-                              </button>
+                              </Button>
+                              <Modal show={displayModal} onHide={handleClose}>
+                                <Modal.Header closeButton>
+                                  <Modal.Title>Deletion </Modal.Title>
+                                </Modal.Header>
+                                <Modal.Body>
+                                  Woohoo, you are reading this text in a modal!
+                                </Modal.Body>
+                                <Modal.Footer>
+                                  <Button
+                                    variant="primary"
+                                    onClick={handleClose}
+                                  >
+                                    Close
+                                  </Button>
+                                  <Button
+                                    variant="outline-danger"
+                                    onClick={listingDeleteHandler}
+                                  >
+                                    Delete
+                                  </Button>
+                                </Modal.Footer>
+                              </Modal>
                             </li>
                           )}
                         </ul>
