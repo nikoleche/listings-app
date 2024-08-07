@@ -1,47 +1,4 @@
-import { useRef } from "react";
-import { useScroll } from "../../hooks/useScroll";
-
-import styles from "./AddListing.module.css";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from "react-router-dom";
-import { useAddListing } from "../../hooks/useListings";
-import { useForm } from "../../hooks/useForm";
-
-const initialValues = {
-  title: "",
-  category: "",
-  location: "",
-  price: "",
-  imageURL: "",
-  phoneNumber: "",
-  email: "",
-  summary: "",
-};
-
-export default function AddListing() {
-  const scrollRef = useRef(null);
-  useScroll(scrollRef);
-
-  const navigate = useNavigate();
-  const addListing = useAddListing();
-
-  async function addHandler(formValues) {
-    try {
-      await addListing(formValues);
-      navigate("/listings");
-    } catch (error) {
-      // VALIDATION
-      console.log(error.message);
-    }
-  }
-
-  const { formValues, updateHandler, submitHandler } = useForm(
-    initialValues,
-    addHandler
-  );
-
+export default function EditListing() {
   return (
     <>
       <div className="page-heading">
@@ -49,6 +6,7 @@ export default function AddListing() {
           <div className="row">
             <div className="col-lg-12">
               <div className="top-text header-text">
+                {/* top-text header-text */}
                 <h2>Add your own listings here</h2>
               </div>
             </div>
@@ -181,7 +139,6 @@ export default function AddListing() {
                         name="email"
                         placeholder=""
                         required
-                        value={formValues.email}
                         onChange={updateHandler}
                       />
                     </div>
@@ -216,7 +173,4 @@ export default function AddListing() {
       </div>
     </>
   );
-}
-
-{
 }

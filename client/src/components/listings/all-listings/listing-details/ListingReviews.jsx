@@ -19,7 +19,7 @@ export default function ListingReviews() {
   const { listingId } = useParams();
   const createReview = useCreateReview();
   const [reviews, setReviews] = useGetAllReviews(listingId);
-  const { iseAuthenticated } = useAuthContext();
+  const { isAuthenticated } = useAuthContext();
 
   const { updateHandler, submitHandler, formValues } = useForm(
     initialValues,
@@ -51,41 +51,43 @@ export default function ListingReviews() {
                     ))}
                   </ul>
                 </div>
-                <div className="col-lg-6">
-                  <div className="right-content align-self-top">
-                    <div className="left-content align-self-center">
-                      <ul className="info">
-                        <form id="reviews" onSubmit={submitHandler}>
-                          <div
-                            className="form-group"
-                            style={{ marginBottom: "10px" }}
-                          >
-                            <label htmlFor="review">Leave a review:</label>
-                            <textarea
-                              className="form-control"
-                              id="review"
-                              name="review"
-                              rows="3"
-                              placeholder=""
-                              required
-                              value={formValues.review}
-                              onChange={updateHandler}
-                            ></textarea>
-                          </div>
-                          <div>
-                            <button
-                              type="submit"
-                              className={styles["review-btn"]}
+                {isAuthenticated && (
+                  <div className="col-lg-6">
+                    <div className="right-content align-self-top">
+                      <div className="left-content align-self-center">
+                        <ul className="info">
+                          <form id="reviews" onSubmit={submitHandler}>
+                            <div
+                              className="form-group"
+                              style={{ marginBottom: "10px" }}
                             >
-                              Submit&nbsp;
-                              <FontAwesomeIcon icon={faComments} />
-                            </button>
-                          </div>
-                        </form>
-                      </ul>
+                              <label htmlFor="review">Leave a review:</label>
+                              <textarea
+                                className="form-control"
+                                id="review"
+                                name="review"
+                                rows="3"
+                                placeholder=""
+                                required
+                                value={formValues.review}
+                                onChange={updateHandler}
+                              ></textarea>
+                            </div>
+                            <div>
+                              <button
+                                type="submit"
+                                className={styles["review-btn"]}
+                              >
+                                Submit&nbsp;
+                                <FontAwesomeIcon icon={faComments} />
+                              </button>
+                            </div>
+                          </form>
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           </div>

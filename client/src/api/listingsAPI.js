@@ -24,12 +24,17 @@ function removeListing(listingId) {
   return request.remove(`${BASE_URL}/${listingId}`);
 }
 
+function updateListing(listingId, listingData) {
+  return request.put(`${BASE_URL}/${listingId}`, listingData);
+}
+
 const listingsAPI = {
   getAll,
   getListing,
   getByCategory,
   addListing,
   removeListing,
+  updateListing,
 };
 
 export default listingsAPI;

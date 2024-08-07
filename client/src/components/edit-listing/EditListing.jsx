@@ -1,13 +1,12 @@
 import { useRef } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { useForm } from "../../hooks/useForm";
 import { useScroll } from "../../hooks/useScroll";
 
-import styles from "./AddListing.module.css";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from "react-router-dom";
-import { useAddListing } from "../../hooks/useListings";
-import { useForm } from "../../hooks/useForm";
+import { faPencil } from "@fortawesome/free-solid-svg-icons";
+import { useGetListing } from "../../hooks/useListings";
+import listingsAPI from "../../api/listingsAPI";
 
 const initialValues = {
   title: "",
@@ -20,26 +19,20 @@ const initialValues = {
   summary: "",
 };
 
-export default function AddListing() {
+export default function EditListing() {
   const scrollRef = useRef(null);
   useScroll(scrollRef);
 
   const navigate = useNavigate();
-  const addListing = useAddListing();
-
-  async function addHandler(formValues) {
-    try {
-      await addListing(formValues);
-      navigate("/listings");
-    } catch (error) {
-      // VALIDATION
-      console.log(error.message);
-    }
-  }
+  const { listingId } = useParams();
+  const [listing] = useGetListing(listingId);
 
   const { formValues, updateHandler, submitHandler } = useForm(
-    initialValues,
-    addHandler
+    Object.assign(initialValues, listing),
+    async (formValues) => {
+      await listingsAPI.updateListing(listingId, formValues);
+      navigate(`/listings/details/${listingId}`);
+    }
   );
 
   return (
@@ -49,7 +42,7 @@ export default function AddListing() {
           <div className="row">
             <div className="col-lg-12">
               <div className="top-text header-text">
-                <h2>Add your own listings here</h2>
+                <h2>Modify an existing listing</h2>
               </div>
             </div>
           </div>
@@ -64,8 +57,8 @@ export default function AddListing() {
                 <div className="row">
                   <form id="add-listing" onSubmit={submitHandler}>
                     <h2>
-                      Upload a listing to our directory&nbsp;
-                      <FontAwesomeIcon icon={faCloudArrowUp} />
+                      Update your existing listing&nbsp;
+                      <FontAwesomeIcon icon={faPencil} />
                     </h2>
                     <br></br>
                     <div
@@ -203,8 +196,11 @@ export default function AddListing() {
                     </div>
                     <div>
                       <br></br>
-                      <button type="submit" className={styles["submit-btn"]}>
-                        Submit
+                      <button
+                        className="btn btn-primary"
+                        style={{ backgroundColor: "#50b498", border: "none" }}
+                      >
+                        Edit
                       </button>
                     </div>
                   </form>
@@ -216,7 +212,4 @@ export default function AddListing() {
       </div>
     </>
   );
-}
-
-{
 }

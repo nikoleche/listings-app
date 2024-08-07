@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import { useRef } from "react";
 import { useGetListing } from "../../../../hooks/useListings";
@@ -17,6 +17,11 @@ export default function ListingDetails() {
   useScroll(scrollRef);
 
   async function listingDeleteHandler() {
+    const approveDelete = confirm(`Delete listing "${listing.title}"?`);
+    if (!approveDelete) {
+      return;
+    }
+
     try {
       await listingsAPI.removeListing(listingId);
       navigate("/");
@@ -84,7 +89,11 @@ export default function ListingDetails() {
                             {listing.email}
                           </li>
                           <li>
-                            <button className={styles["edit-btn"]}>Edit</button>
+                            <Link to={`/listings/edit/${listingId}`}>
+                              <button className={styles["edit-btn"]}>
+                                Edit
+                              </button>
+                            </Link>
                             <button
                               className={styles["delete-btn"]}
                               onClick={listingDeleteHandler}

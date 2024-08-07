@@ -13,6 +13,7 @@ import ListingDetails from "./components/listings/all-listings/listing-details/L
 import ListingsByCategory from "./components/categories/category/ListingsByCategory";
 import Logout from "./components/logout/Logout";
 import AddListing from "./components/add-listing/AddListing";
+import EditListing from "./components/edit-listing/EditListing";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             path="/listings/details/:listingId"
             element={<ListingDetails />}
           />
+          <Route path="/listings/edit/:listingId" element={<EditListing />} />
           <Route path="/add-listing" element={<AddListing />} />
         </Routes>
         <Footer />

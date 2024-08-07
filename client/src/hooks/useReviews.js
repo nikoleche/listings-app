@@ -13,7 +13,6 @@ export function useGetAllReviews(listingId) {
       }
     })();
   }, [listingId]);
-
   return [reviews, setReviews];
 }
 
