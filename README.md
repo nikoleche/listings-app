@@ -113,6 +113,4 @@ Existing users logout.
 /users/logout
 ```
 
-### End of documentation
-
 Thank you for reading my documentation
