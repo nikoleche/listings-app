@@ -58,6 +58,16 @@ export default function Header() {
                   <>
                     <li>
                       <NavLink
+                        to={"/my-listings"}
+                        style={({ isActive }) =>
+                          isActive ? { color: "#50b498" } : {}
+                        }
+                      >
+                        <b>&nbsp;My Listings</b>
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
                         to={"/logout"}
                         style={({ isActive }) =>
                           isActive ? { color: "#50b498" } : {}

@@ -138,9 +138,7 @@ export default function MainBanner() {
                       <ListingItem key={search._id} {...search} />
                     ))}
                     {searchOutput.length === 0 && (
-                      <p className="lead">
-                        There are no listings from this category yet.
-                      </p>
+                      <p className="lead">Search results go here.</p>
                     )}
                   </div>
                 </div>

@@ -17,6 +17,7 @@ import EditListing from "./components/edit-listing/EditListing";
 import RouteGuard from "./components/common/RouteGuard";
 import AuthGuard from "./components/common/AuthGuard";
 import NotFound from "./components/not-found/NotFound";
+import MyListings from "./components/listings/my-listings/MyListings";
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
 
         <Header />
         <Routes>
-          <Route path="/" element={<MainBanner />}></Route>/>
+          <Route path="/" element={<MainBanner />} />
           <Route path="/category/*" element={<Categories />}>
             <Route path=":categoryId" element={<ListingsByCategory />} />
           </Route>
@@ -41,6 +42,7 @@ function App() {
           </Route>
           <Route element={<RouteGuard />}>
             <Route path="/add-listing" element={<AddListing />} />
+            <Route path="/my-listings" element={<MyListings />} />
             <Route path="/listings/edit/:listingId" element={<EditListing />} />
             <Route path="/logout" element={<Logout />} />
           </Route>

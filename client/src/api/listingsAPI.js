@@ -20,6 +20,12 @@ function getBySearch(searchQuery) {
   return request.get(`${BASE_URL}?where=title%20LIKE%20%22${searchQuery}%22`);
 }
 
+function getUserListings(userId) {
+  return request.get(`${BASE_URL}?where=_ownerId%20IN%20(%22${userId}%22)`);
+}
+
+// http://localhost:3030/data/listings?where=_ownerId IN ("60f0cf0b-34b0-4abd-9769-8c42f830dffc")
+
 function addListing(listingData) {
   return request.post(`${BASE_URL}`, listingData);
 }
@@ -37,6 +43,7 @@ const listingsAPI = {
   getListing,
   getByCategory,
   getBySearch,
+  getUserListings,
   addListing,
   removeListing,
   updateListing,

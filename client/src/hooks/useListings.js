@@ -37,16 +37,16 @@ export function useGetListingsByCategory(categoryId) {
   return [listings];
 }
 
-// export function useSearchListings(searchQuery) {
-//   const [foundListings, setFoundListings] = useState([]);
-//   useEffect(() => {
-//     (async () => {
-//       const result = await listingsAPI.getBySearch(searchQuery);
-//       setFoundListings(result);
-//     })();
-//   }, [searchQuery]);
-//   return [foundListings];
-// }
+export function useGetListingsByUser(userId) {
+  const [listings, setListings] = useState([]);
+  useEffect(() => {
+    (async () => {
+      const result = await listingsAPI.getUserListings(userId);
+      setListings(result);
+    })();
+  }, [userId]);
+  return [listings];
+}
 
 export function useAddListing() {
   function addListingHandler(listingData) {
