@@ -6,7 +6,7 @@
 2. [Initial Setup](#initial-setup)
 3. [Routes](#pages)
 4. [APIs](#apis)
-5. [Bugs] (#bugs)
+5. [Bugs](#bugs)
 
 ## Introduction
 
@@ -39,7 +39,7 @@ The application will then be accessible at http://localhost:5173
 
 ### Home ("/")
 
-This is the landing page of the application. It offers navigation to other parts of the website and allows users to search for listings by title. The search feature supports partial matches and is case-insensitive.
+This is the landing page of the application. It provides navigation to other parts of the website and allows users to search for listings by title. The search feature supports partial matches and is case-insensitive.
 
 ### Categories ("/categories")
 
