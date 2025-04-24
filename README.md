@@ -6,6 +6,7 @@
 2. [Initial Setup](#initial-setup)
 3. [Routes](#pages)
 4. [APIs](#apis)
+5. [Bugs] (#bugs)
 
 ## Introduction
 
@@ -22,13 +23,13 @@ npm ic
 npm run dev
 ```
 
-/ server folder
+/server folder
 
 ```
 node server.js
 ```
 
-The application will then be accessible at https://localhost:5173
+The application will then be accessible at http://localhost:5173
 
 > NOTE: This application does not support persistent storage yet. In case of a server restart, please run localStorage.clear() in the browser.
 
@@ -65,7 +66,7 @@ The registration page is where new users create accounts.
 
 ### <u>Authenticated users:</u>
 
-### My Listings ("/my-listings")u
+### My Listings ("/my-listings")
 
 This page displays the listings that the specific authenticated user has created. It allows users to view, manage, and edit their own listings, providing easy access to update details or remove properties as needed.
 
@@ -82,8 +83,6 @@ This option allows users to securely log out of their account. After logging out
 The NYC Listings application communicates with Softuni's server to handle backend operations via API endpoints.
 
 ### <ul>API Endpoints</ul>
-
-CRUD operations:
 
 ```
 /data/listings
@@ -113,4 +112,8 @@ Existing users logout.
 /users/logout
 ```
 
-Thank you for reading my documentation
+## Bugs
+
+### <u>S4 Minor</u>
+
+Upon posting a new comment, the author is not shown immediately unless the page gets refreshed. The comment appears correctly and no refresh is needed.
