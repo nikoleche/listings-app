@@ -73,7 +73,7 @@ This page displays the listings that the specific authenticated user has created
 
 This page allows authenticated users to create new property listings by filling in a form.
 
-### Logout ("/Logout")
+### Logout ("/logout")
 
 This option allows users to securely log out of their account. After logging out, users are redirected to the homepage of the website.
 
