@@ -10,7 +10,7 @@
 
 ## Introduction
 
-"NYC Listings" is a project designed for learning purposes. The application utilizes a modern tech stack including React, React-Bootstrap, React-DOM, and React-Router for a responsive user experience. It supports all CRUD operations. The backend operations are currently handled by SoftUni's server.
+"NYC Listings" is a project created for learning purposes. The application uses a modern tech stack including React, React-Bootstrap, React-DOM, and React-Router for a responsive user experience. It supports all CRUD operations. The backend operations are currently handled by SoftUni's server.
 
 ## Initial Setup
 
