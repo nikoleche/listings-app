@@ -1,4 +1,4 @@
-# NYC Listings Documentation
+# NYC Listings App Documentation
 
 ## Navigation
 
