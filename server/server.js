@@ -1450,15 +1450,15 @@
       },
       "63d3f8a5-1e86-445a-9ca4-05fd89df6f28": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-        title: "New Foods",
+        title: "The Golden Lantern & Co.",
         category: "restaurants",
-        location: "Times Square, New York",
-        price: "2000 per person",
+        location: "Queens, New York",
+        price: "150 per person",
         imageURL: "http://localhost:5173/assets/images/listing-01.jpg",
         phoneNumber: "1-223-991-992",
-        email: "finedine@nyc.com",
+        email: "finedine@goldenlantern.com",
         summary:
-          "New Foods is a trendy NYC restaurant that redefines culinary innovation with its eclectic menu and bold flavors. Specializing in modern twists on global dishes, New Foods offers a dining experience that is both fresh and exciting.",
+          "The Golden Lantern & Co.redefines fine dining in Queens with a focus on elegance, seasonality, and precision. A curated menu of thoughtfully prepared dishes is complemented by an intimate setting and attentive service, making each visit a quiet celebration of culinary artistry.",
         _id: "63d3f8a5-1e86-445a-9ca4-05fd89df6f28",
       },
       "10383107-ea81-4097-b85c-59bd77fc71dt": {
