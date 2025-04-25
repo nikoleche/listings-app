@@ -26,7 +26,7 @@ export default function Footer() {
                       <Link to={"/"}>Home</Link>
                     </li>
                     <li style={{ display: "inline-block", padding: "10px" }}>
-                      <Link to={"/categories"}>Categories</Link>
+                      <Link to={"/category"}>Categories</Link>
                     </li>
                     <li style={{ display: "inline-block", padding: "10px" }}>
                       <Link to={"/listings"}>Listings</Link>
